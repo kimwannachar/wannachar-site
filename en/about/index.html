@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Kim Wannachar</title>
+<meta name="description" content="Kim Wannachar — IT Platform Lead at Infinitas by Krungthai with 20+ years in software development. Writer on system design, psychology, and leadership.">
+<meta property="og:title" content="About — Kim Wannachar">
+<meta property="og:description" content="IT Platform Lead at Infinitas by Krungthai with 20+ years in software development.">
+<meta property="og:image" content="https://www.wannachar.com/kim-avatar.png">
+<meta property="og:url" content="https://www.wannachar.com/en/about/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,500;1,300&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDF9FA;
+    --pink:#F4D6E0;
+    --pink-soft:#FAEBF0;
+    --pink-deep:#DFA8BC;
+    --navy:#22304E;
+    --navy-soft:#5D6A85;
+    --navy-deep:#16213A;
+    --line:#EDDFE4;
+    --max:1040px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Anuphan',sans-serif;
+    background:var(--paper);
+    color:var(--navy);
+    line-height:1.75;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(253,249,250,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-family:'Trirong',serif;font-size:1.12rem;font-weight:500;letter-spacing:.06em}
+  .logo span{color:var(--pink-deep)}
+  .lang-link{font-size:.9rem;color:var(--navy-soft)}
+  .lang-link:hover{color:var(--navy-deep);text-decoration:underline}
+  main{padding:88px 0}
+  h1{font-family:'Trirong',serif;font-size:1.9rem;font-weight:400;color:var(--navy-deep);margin-bottom:28px}
+  .about-grid{display:grid;grid-template-columns:170px 1fr;gap:44px;align-items:start}
+  .portrait{
+    width:170px;height:170px;border-radius:50%;
+    object-fit:cover;display:block;
+    outline:1px solid var(--pink-deep);outline-offset:7px;
+  }
+  .about-text p+p{margin-top:14px}
+  .about-text .quiet{color:var(--navy-soft);font-size:.95rem}
+  footer{border-top:1px solid var(--line);padding:44px 0;background:var(--navy-deep);color:#EFE6EA}
+  .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:24px;font-size:.9rem}
+  .foot-links a:hover{text-decoration:underline;color:var(--pink)}
+  .foot-note{font-size:.82rem;opacity:.7}
+  @media (max-width:640px){
+    .about-grid{grid-template-columns:1fr}
+    main{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">Kim <span>Wannachar</span></a>
+    <a class="lang-link" href="/#about" lang="th">ภาษาไทย</a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap about-grid">
+    <img class="portrait" src="/kim-avatar.png" alt="Kim Wannachar" width="340" height="340">
+    <div class="about-text">
+      <h1>About me</h1>
+      <p>I've worked in software development for more than 20 years.</p>
+      <p>My path began as a programmer, growing into system analyst, project leader,
+      project manager, and lead business analyst — and today I'm an IT Platform Lead at
+      Infinitas by Krungthai, the tech company (speed boat) of Krungthai Bank.</p>
+      <p>Along the way I initiated and designed the eKYC Platform and the
+      Customer Data Integration (CDI) Platform — from an idea on a single slide,
+      through pitching on many stages, to leading the teams that built them into production systems.</p>
+      <p>Today I look after our key platforms: the Insurance Platform,
+      the University Platform, and the Clix E2E Operation Portal.</p>
+      <p>The work I'm proudest of is helping build products that reach everyday people —
+      government bond purchasing and the Student Loan Fund system on the Paotang app.</p>
+      <p>Outside of work, my hobbies are buying books, reading books, and developing myself.</p>
+      <p class="quiet">This site is the permanent home of all my writing —
+      articles are in Thai on the <a href="/" style="text-decoration:underline">home page</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-links">
+      <a href="https://medium.com/@kimwannachar." target="_blank" rel="noopener">Medium</a>
+      <a href="https://www.facebook.com/wannachar.sujindawat" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.threads.com/@kimwannachar?hl=th" target="_blank" rel="noopener">Threads</a>
+      <a href="mailto:kimwannachar@gmail.com">Email</a>
+    </div>
+    <span class="foot-note">© 2026 Kim Wannachar · read deeply, write clearly</span>
+  </div>
+</footer>
+
+</body>
+</html>

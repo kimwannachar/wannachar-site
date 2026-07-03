@@ -100,35 +100,33 @@ def slug_of(link: str) -> str:
 
 
 def render_article(item, override):
-    th_date, en_date = format_date(item["pub_raw"])
-    swatch, tag_th_default, tag_en_default = classify(item["categories"], item["title"])
+    th_date, _ = format_date(item["pub_raw"])
+    swatch, tag_default, _ = classify(item["categories"], item["title"])
     popular = bool(override and override.get("popular"))
 
-    # Article title and excerpt stay in their original language (no
-    # th/en switching) — only UI labels like the tag are bilingual.
+    # Thai-only site (see .claude/skills/thai-personal-site): article
+    # title and excerpt stay in their original language, labels in Thai.
     if override:
         desc = override.get("desc_th") or excerpt_from_content(item["content"])
-        tag_th = override.get("tag_th", tag_th_default)
-        tag_en = override.get("tag_en", tag_en_default)
+        tag = override.get("tag_th", tag_default)
         swatch = override.get("swatch", swatch)
     else:
         desc = excerpt_from_content(item["content"])
-        tag_th, tag_en = tag_th_default, tag_en_default
+        tag = tag_default
 
     esc = lambda s: html.escape(s, quote=False)
     title_html = esc(item["title"])
 
-    pop_html = ('<span class="pop">👏 <span class="th">ยอดนิยม</span>'
-                '<span class="en">Popular</span></span>' if popular else '')
+    pop_html = '<span class="pop">👏 ยอดนิยม</span>' if popular else ''
 
     return f'''    <article class="article">
       <div class="swatch sw-{swatch}" aria-hidden="true"></div>
       <div>
         <h3><a href="{html.escape(item['link'], quote=True)}" target="_blank" rel="noopener">{title_html}</a>{pop_html}</h3>
         <p>{esc(desc)}</p>
-        <span class="tag tag-{swatch}"><span class="th">{esc(tag_th)}</span><span class="en">{esc(tag_en)}</span></span>
+        <span class="tag tag-{swatch}">{esc(tag)}</span>
       </div>
-      <span class="meta"><span class="th">{th_date}</span><span class="en">{en_date}</span></span>
+      <span class="meta">{th_date}</span>
     </article>'''
 
 
