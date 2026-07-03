@@ -104,26 +104,19 @@ def render_article(item, override):
     swatch, tag_th_default, tag_en_default = classify(item["categories"], item["title"])
     popular = bool(override and override.get("popular"))
 
+    # Article title and excerpt stay in their original language (no
+    # th/en switching) — only UI labels like the tag are bilingual.
     if override:
-        title_th = override.get("title_th", item["title"])
-        title_en = override.get("title_en", item["title"])
-        desc_th = override.get("desc_th") or excerpt_from_content(item["content"])
-        desc_en = override.get("desc_en") or desc_th
+        desc = override.get("desc_th") or excerpt_from_content(item["content"])
         tag_th = override.get("tag_th", tag_th_default)
         tag_en = override.get("tag_en", tag_en_default)
         swatch = override.get("swatch", swatch)
     else:
-        title_th = title_en = item["title"]
-        desc_th = desc_en = excerpt_from_content(item["content"])
+        desc = excerpt_from_content(item["content"])
         tag_th, tag_en = tag_th_default, tag_en_default
 
     esc = lambda s: html.escape(s, quote=False)
-
-    if title_th == title_en:
-        title_html = esc(title_th)
-    else:
-        title_html = (f'<span class="th">{esc(title_th)}</span>'
-                       f'<span class="en">{esc(title_en)}</span>')
+    title_html = esc(item["title"])
 
     pop_html = ('<span class="pop">👏 <span class="th">ยอดนิยม</span>'
                 '<span class="en">Popular</span></span>' if popular else '')
@@ -132,8 +125,7 @@ def render_article(item, override):
       <div class="swatch sw-{swatch}" aria-hidden="true"></div>
       <div>
         <h3><a href="{html.escape(item['link'], quote=True)}" target="_blank" rel="noopener">{title_html}</a>{pop_html}</h3>
-        <p><span class="th">{esc(desc_th)}</span>
-           <span class="en">{esc(desc_en)}</span></p>
+        <p>{esc(desc)}</p>
         <span class="tag tag-{swatch}"><span class="th">{esc(tag_th)}</span><span class="en">{esc(tag_en)}</span></span>
       </div>
       <span class="meta"><span class="th">{th_date}</span><span class="en">{en_date}</span></span>
