@@ -102,6 +102,7 @@ def slug_of(link: str) -> str:
 def render_article(item, override):
     th_date, en_date = format_date(item["pub_raw"])
     swatch, tag_th_default, tag_en_default = classify(item["categories"], item["title"])
+    popular = bool(override and override.get("popular"))
 
     if override:
         title_th = override.get("title_th", item["title"])
@@ -124,10 +125,13 @@ def render_article(item, override):
         title_html = (f'<span class="th">{esc(title_th)}</span>'
                        f'<span class="en">{esc(title_en)}</span>')
 
+    pop_html = ('<span class="pop">👏 <span class="th">ยอดนิยม</span>'
+                '<span class="en">Popular</span></span>' if popular else '')
+
     return f'''    <article class="article">
       <div class="swatch sw-{swatch}" aria-hidden="true"></div>
       <div>
-        <h3><a href="{html.escape(item['link'], quote=True)}" target="_blank" rel="noopener">{title_html}</a></h3>
+        <h3><a href="{html.escape(item['link'], quote=True)}" target="_blank" rel="noopener">{title_html}</a>{pop_html}</h3>
         <p><span class="th">{esc(desc_th)}</span>
            <span class="en">{esc(desc_en)}</span></p>
         <span class="tag tag-{swatch}"><span class="th">{esc(tag_th)}</span><span class="en">{esc(tag_en)}</span></span>
