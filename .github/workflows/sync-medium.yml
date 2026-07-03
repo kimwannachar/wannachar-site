@@ -1,0 +1,31 @@
+name: Sync Medium articles
+
+on:
+  schedule:
+    # 01:00 UTC = 08:00 Bangkok time, daily
+    - cron: "0 1 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Medium sync script
+        run: python3 scripts/sync_medium.py
+
+      - name: Commit and push if index.html changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No article changes."
+            exit 0
+          fi
+          git config user.name "medium-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git commit -m "chore: sync Medium articles"
+          git push

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim Wannachar — a reader who wants to be a writer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,500;1,300&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDF9FA;         /* ชมพูขาวนวล */
+    --pink:#F4D6E0;          /* ชมพูพาสเทล */
+    --pink-soft:#FAEBF0;     /* ชมพูจางมาก */
+    --pink-deep:#DFA8BC;     /* ชมพูเข้มขึ้นสำหรับ hover/ขอบ */
+    --navy:#22304E;          /* navy หลัก */
+    --navy-soft:#5D6A85;     /* navy อ่อนสำหรับข้อความรอง */
+    --navy-deep:#16213A;
+    --line:#EDDFE4;
+    --max:1040px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Anuphan',sans-serif;
+    background:var(--paper);
+    color:var(--navy);
+    line-height:1.75;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* ---------- language toggle ---------- */
+  .en{display:none}
+  body.lang-en .en{display:revert}
+  body.lang-en .th{display:none}
+  .lang-toggle{
+    display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;
+    font-size:.8rem;font-weight:600;
+  }
+  .lang-toggle button{
+    border:0;background:transparent;padding:5px 14px;cursor:pointer;
+    font-family:inherit;color:var(--navy-soft);
+  }
+  .lang-toggle button.active{background:var(--navy);color:#fff}
+  .lang-toggle button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(253,249,250,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-family:'Trirong',serif;font-size:1.12rem;font-weight:500;letter-spacing:.06em}
+  .logo span{color:var(--pink-deep)}
+  .nav-right{display:flex;align-items:center;gap:24px}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;color:var(--navy-soft)}
+  .nav-links a:hover{color:var(--navy-deep)}
+  .nav-links a:focus-visible{outline:2px solid var(--navy);outline-offset:4px}
+
+  /* ---------- hero ---------- */
+  header{padding:112px 0 84px}
+  .eyebrow{
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--navy-soft);font-weight:600;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Trirong',serif;
+    font-size:clamp(2.1rem,5.2vw,3.6rem);
+    line-height:1.42;font-weight:300;max-width:22ch;color:var(--navy-deep);
+    letter-spacing:.01em;
+  }
+  .hl{
+    font-style:italic;font-weight:400;white-space:nowrap;color:var(--navy-deep);
+    text-decoration:underline;text-decoration-thickness:1px;
+    text-decoration-color:var(--pink-deep);text-underline-offset:.24em;
+  }
+  .hero-sub{margin-top:26px;max-width:56ch;color:var(--navy-soft);font-size:1.03rem}
+  .hero-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:14px 34px;border-radius:0;
+    font-size:.82rem;font-weight:500;letter-spacing:.1em;
+    transition:all .18s ease;
+  }
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-deep)}
+  .btn-ghost{border:1px solid var(--pink-deep);color:var(--navy)}
+  .btn-ghost:hover{background:var(--pink-soft)}
+  .btn:focus-visible{outline:2px solid var(--navy-deep);outline-offset:3px}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;gap:16px;flex-wrap:wrap}
+  h2{font-family:'Trirong',serif;font-size:1.7rem;font-weight:400;color:var(--navy-deep);letter-spacing:.01em}
+  .sec-note{font-family:'Trirong',serif;font-style:italic;font-size:.9rem;color:var(--navy-soft)}
+
+  /* ---------- legend: two threads ---------- */
+  .legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:36px;font-size:.85rem;color:var(--navy-soft)}
+  .legend span{display:inline-flex;align-items:center;gap:8px}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+  .dot-sys{background:var(--navy)}
+  .dot-mind{background:var(--pink-deep)}
+
+  /* ---------- article list ---------- */
+  .article{
+    display:grid;grid-template-columns:3px 1fr auto;gap:26px;
+    padding:30px 0;border-bottom:1px solid var(--line);align-items:start;
+  }
+  .swatch{width:3px;min-height:60px;height:100%;border-radius:0}
+  .sw-sys{background:var(--navy)}
+  .sw-mind{background:var(--pink-deep)}
+  .article h3{font-weight:500;font-size:1.13rem;line-height:1.5}
+  .article h3 a:hover{color:var(--pink-deep)}
+  .article .sw-sys ~ div h3 a:hover{color:var(--navy-deep)}
+  .article p{color:var(--navy-soft);font-size:.94rem;margin-top:5px;max-width:62ch}
+  .meta{font-family:'Trirong',serif;font-style:italic;font-size:.86rem;color:var(--navy-soft);white-space:nowrap;padding-top:4px}
+  .tag{
+    display:inline-block;margin-top:12px;font-size:.68rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+  .tag-sys{color:var(--navy-soft)}
+  .tag-mind{color:#B0728C}
+
+  /* ---------- series / portfolio ---------- */
+  .port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:0;
+    padding:34px 30px;border-top:2px solid var(--card-accent,var(--navy));
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(34,48,78,.07)}
+  .card .kind{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--navy-soft)}
+  .card h3{font-weight:500;font-size:1.12rem;margin:12px 0 8px;color:var(--navy-deep)}
+  .card p{color:var(--navy-soft);font-size:.92rem}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:170px 1fr;gap:44px;align-items:start}
+  .portrait{
+    width:170px;height:170px;border-radius:50%;
+    object-fit:cover;display:block;
+    outline:1px solid var(--pink-deep);outline-offset:7px;
+  }
+  .about-text p+p{margin-top:14px}
+  .about-text .quiet{color:var(--navy-soft);font-size:.95rem}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:44px 0;background:var(--navy-deep);color:#EFE6EA}
+  .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:24px;font-size:.9rem}
+  .foot-links a:hover{text-decoration:underline;color:var(--pink)}
+  .foot-note{font-size:.82rem;opacity:.7}
+
+  @media (max-width:640px){
+    .article{grid-template-columns:3px 1fr}
+    .meta{grid-column:2;padding-top:0}
+    .about-grid{grid-template-columns:1fr}
+    header{padding:60px 0 44px}
+    .nav-links{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Kim <span>Wannachar</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#articles"><span class="th">บทความ</span><span class="en">Articles</span></a>
+        <a href="#series"><span class="th">ซีรีส์</span><span class="en">Series</span></a>
+        <a href="#about"><span class="th">เกี่ยวกับฉัน</span><span class="en">About</span></a>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="btn-th" class="active" onclick="setLang('th')">ไทย</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="th">นักอ่าน · นักเขียน · นักพัฒนา — Bangkok</span>
+      <span class="en">Reader · Writer · Developer — Bangkok</span>
+    </div>
+    <h1>
+      <span class="th">นักอ่าน<br>ที่อยากเป็น<span class="hl">นักเขียน</span></span>
+      <span class="en">A reader<br>who wants to be <span class="hl">a writer</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="th">สวัสดีค่ะ ฉันกิม — เขียนเรื่อง system design ที่จับต้องได้
+      และเรื่องของใจคน ผ่านจิตวิทยาและ leadership
+      สองเรื่องที่ดูไกลกัน แต่จริงๆ แล้วคือเรื่องเดียวกัน: การออกแบบให้สิ่งต่างๆ ทำงานได้ดี</span>
+      <span class="en">Hi, I'm Kim — I write about practical system design,
+      and about the human mind through psychology and leadership.
+      Two threads that seem far apart, but are really the same thing:
+      designing things so they work well.</span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#articles"><span class="th">อ่านบทความล่าสุด</span><span class="en">Read latest articles</span></a>
+      <a class="btn btn-ghost" href="https://medium.com/@kimwannachar." target="_blank" rel="noopener"><span class="th">ทุกบทความบน Medium</span><span class="en">All articles on Medium</span></a>
+    </div>
+  </div>
+</header>
+
+<section id="articles">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="th">บทความล่าสุด</span><span class="en">Latest articles</span></h2>
+    </div>
+    <div class="legend">
+      <span><i class="dot dot-sys"></i><span class="th">System Design · Engineering</span><span class="en">System Design · Engineering</span></span>
+      <span><i class="dot dot-mind"></i><span class="th">จิตวิทยา · Leadership</span><span class="en">Mind · Leadership</span></span>
+    </div>
+
+    <!-- MEDIUM-ARTICLES:START -->
+    <article class="article">
+      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./design-audit-log-ebfc854bc09e" target="_blank" rel="noopener">System Design — Audit Log</a></h3>
+        <p><span class="th">มาออกแบบ audit log ตามระดับการใช้งานกันนะคะ</span>
+           <span class="en">Designing audit logs that scale with how your system is actually used.</span></p>
+        <span class="tag tag-sys"><span class="th">System Design</span><span class="en">System Design</span></span>
+      </div>
+      <span class="meta"><span class="th">มิ.ย. 2026</span><span class="en">Jun 2026</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./frugal-ai-6c43455fa655" target="_blank" rel="noopener">Frugal AI</a></h3>
+        <p><span class="th">'ปัญญาประดิษฐ์แบบคุ้มค่า' — ใช้ AI อย่างไรให้คุ้มทั้งเงินและทรัพยากร</span>
+           <span class="en">"Frugal AI" — getting real value from AI without burning money and resources.</span></p>
+        <span class="tag tag-sys"><span class="th">AI · Engineering</span><span class="en">AI · Engineering</span></span>
+      </div>
+      <span class="meta"><span class="th">พ.ค. 2026</span><span class="en">May 2026</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./belief-vs-behavior-how-9d9f6cab99bb" target="_blank" rel="noopener">Belief vs Behavior : How?</a></h3>
+        <p><span class="th">เมื่อความเชื่อขัดแย้งกับการกระทำ เราจัดการอย่างไร?</span>
+           <span class="en">When what we believe clashes with what we do — how do we handle it?</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา</span><span class="en">Psychology</span></span>
+      </div>
+      <span class="meta"><span class="th">ก.ย. 2025</span><span class="en">Sep 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./motivation-maslows-hierarchy-of-needs-62f71633eb52" target="_blank" rel="noopener">Motivation — Maslow's Hierarchy of Needs</a></h3>
+        <p><span class="th">แรงจูงใจ — ลำดับขั้นความต้องการของมาสโลว์</span>
+           <span class="en">What actually drives us, through Maslow's classic hierarchy.</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา</span><span class="en">Psychology</span></span>
+      </div>
+      <span class="meta"><span class="th">ก.ย. 2025</span><span class="en">Sep 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./personality-in-8-rooms-8bfcea1e3900" target="_blank" rel="noopener">Personalities in 8 Rooms</a></h3>
+        <p><span class="th">8 ห้องแห่งบุคลิกภาพ: คุณอยู่ห้องไหนบ้างคะ?</span>
+           <span class="en">Eight rooms of personality — which ones do you live in?</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา</span><span class="en">Psychology</span></span>
+      </div>
+      <span class="meta"><span class="th">ก.ย. 2025</span><span class="en">Sep 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./leadership-da-series-2-quick-win-e1c3f71855c1" target="_blank" rel="noopener">Leadership da series~2.Quick Win</a></h3>
+        <p><span class="th">People join companies, they leave managers มาต่อกันที่ Leadership da series หัวข้อที่ 2. Quick Win กันนะคะ ต่อเนื่องจากบทความแรก…</span>
+           <span class="en">People join companies, they leave managers มาต่อกันที่ Leadership da series หัวข้อที่ 2. Quick Win กันนะคะ ต่อเนื่องจากบทความแรก…</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา · Leadership</span><span class="en">Mind · Leadership</span></span>
+      </div>
+      <span class="meta"><span class="th">ส.ค. 2025</span><span class="en">Aug 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./leadership-da-series-1-self-check-9f1a17e526a0" target="_blank" rel="noopener">Leadership da series~1.Self Check</a></h3>
+        <p><span class="th">People join companies, they leave managers “ผู้คนสมัครงานเพราะต้องการเข้าร่วมงานกับองค์กร แต่พวกเขาต้องลาออกเพราะหัวหน้า”…</span>
+           <span class="en">People join companies, they leave managers “ผู้คนสมัครงานเพราะต้องการเข้าร่วมงานกับองค์กร แต่พวกเขาต้องลาออกเพราะหัวหน้า”…</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา · Leadership</span><span class="en">Mind · Leadership</span></span>
+      </div>
+      <span class="meta"><span class="th">ส.ค. 2025</span><span class="en">Aug 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./resilient-system-design-e8703e2626d2" target="_blank" rel="noopener">Resilient System Design</a></h3>
+        <p><span class="th">ออกแบบระบบให้ทำงานต่อได้ แม้ระบบต้นทางหรือปลายทางจะดับไป</span>
+           <span class="en">Designing systems that keep working even when upstream or downstream fails.</span></p>
+        <span class="tag tag-sys"><span class="th">System Design</span><span class="en">System Design</span></span>
+      </div>
+      <span class="meta"><span class="th">มิ.ย. 2025</span><span class="en">Jun 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81-4-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-johari-window-bb36100e1905" target="_blank" rel="noopener"><span class="th">รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window</span><span class="en">Four rooms of the heart — the Johari Window</span></a></h3>
+        <p><span class="th">เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ</span>
+           <span class="en">Told a friend about the Johari Window — then wanted to write it down properly.</span></p>
+        <span class="tag tag-mind"><span class="th">จิตวิทยา</span><span class="en">Psychology</span></span>
+      </div>
+      <span class="meta"><span class="th">เม.ย. 2025</span><span class="en">Apr 2025</span></span>
+    </article>
+
+    <article class="article">
+      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div>
+        <h3><a href="https://medium.com/@kimwannachar./protect-race-condition-1c1cbcbc22d0" target="_blank" rel="noopener">Protect 'Race Condition'</a></h3>
+        <p><span class="th">ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ</span>
+           <span class="en">Designing race conditions out of your system before they find you in production.</span></p>
+        <span class="tag tag-sys"><span class="th">System Design</span><span class="en">System Design</span></span>
+      </div>
+      <span class="meta"><span class="th">ก.พ. 2025</span><span class="en">Feb 2025</span></span>
+    </article>
+    <!-- MEDIUM-ARTICLES:END -->
+  </div>
+</section>
+
+<section id="series">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="th">ซีรีส์ · ผลงานคัดสรร</span><span class="en">Series · Selected work</span></h2>
+    </div>
+    <div class="port-grid">
+      <div class="card" style="--card-accent:var(--pink-deep)">
+        <span class="kind"><span class="th">ซีรีส์</span><span class="en">Series</span></span>
+        <h3>Leadership da series</h3>
+        <p><span class="th">"People join companies, they leave managers" — ซีรีส์ว่าด้วยการเป็นหัวหน้าที่คนไม่อยากจากไป ตอนที่ 1: Self Check และตอนที่ 2: Quick Win</span>
+           <span class="en">"People join companies, they leave managers" — on becoming a manager people don't want to leave. Part 1: Self Check, Part 2: Quick Win.</span></p>
+      </div>
+      <div class="card" style="--card-accent:var(--navy)">
+        <span class="kind"><span class="th">ซีรีส์</span><span class="en">Series</span></span>
+        <h3>System Design in Practice</h3>
+        <p><span class="th">บทความ system design ภาษาไทยที่อ่านง่ายและใช้ได้จริง — audit log, resilience, race condition และอื่นๆ</span>
+           <span class="en">Approachable, practical system design writing in Thai — audit logs, resilience, race conditions, and more.</span></p>
+      </div>
+      <div class="card" style="--card-accent:var(--pink)">
+        <span class="kind"><span class="th">กำลังจะมา</span><span class="en">Coming soon</span></span>
+        <h3><span class="th">จดหมายข่าว</span><span class="en">Newsletter</span></h3>
+        <p><span class="th">บทความใหม่ส่งตรงถึงอีเมลคุณ — เมื่อเว็บนี้พร้อม จะเปิดให้สมัครที่นี่ค่ะ</span>
+           <span class="en">New articles straight to your inbox — signup opens here once this site goes live.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <img class="portrait" src="kim-avatar.png" alt="Kim Wannachar" width="340" height="340" loading="lazy">
+    <div class="about-text">
+      <h2 style="margin-bottom:18px"><span class="th">เกี่ยวกับฉัน</span><span class="en">About me</span></h2>
+      <p><span class="th">ฉันคือนักอ่านที่อยากเป็นนักเขียน — นักพัฒนาที่สนใจทั้งการออกแบบระบบให้ทนทาน
+      และการทำความเข้าใจใจคนให้ลึกขึ้น เขียนเพื่อเรียบเรียงความคิดตัวเอง
+      และหวังว่าจะเป็นประโยชน์กับคนที่ผ่านมาอ่านด้วยค่ะ</span>
+      <span class="en">I'm a reader who wants to be a writer — a developer interested in
+      both designing resilient systems and understanding the human mind.
+      I write to organize my own thinking, and hope it's useful to whoever passes by.</span></p>
+      <p class="quiet"><span class="th">เว็บไซต์นี้คือบ้านถาวรของงานเขียนทั้งหมด ติดต่องานหรือทักทายได้เสมอค่ะ</span>
+      <span class="en">This site is the permanent home of all my writing. Always happy to hear from you.</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-links">
+      <a href="https://medium.com/@kimwannachar." target="_blank" rel="noopener">Medium</a>
+      <a href="https://www.facebook.com/wannachar.sujindawat" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.threads.com/@kimwannachar?hl=th" target="_blank" rel="noopener">Threads</a>
+      <a href="mailto:kimwannachar@gmail.com"><span class="th">อีเมล</span><span class="en">Email</span></a>
+    </div>
+    <span class="foot-note">© 2026 Kim Wannachar · <span class="th">อ่านให้ลึก เขียนให้เข้าใจ</span><span class="en">read deeply, write clearly</span></span>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+</script>
+
+</body>
+</html>
