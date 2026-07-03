@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kim Wannachar — นักอ่านที่อยากเป็นนักเขียน</title>
+    <link>https://www.wannachar.com/</link>
+    <description>บทความ system design จิตวิทยา และ leadership ภาษาไทย</description>
+    <language>th</language>
+    <atom:link href="https://www.wannachar.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[System Design — Audit Log]]></title>
+      <link>https://www.wannachar.com/articles/design-audit-log/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/design-audit-log/</guid>
+      <description><![CDATA[มาออกแบบ audit log ตามระดับการใช้งานกันนะคะ]]></description>
+      <pubDate>Sun, 28 Jun 2026 09:37:44 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Frugal AI]]></title>
+      <link>https://www.wannachar.com/articles/frugal-ai/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/frugal-ai/</guid>
+      <description><![CDATA['ปัญญาประดิษฐ์แบบคุ้มค่า' — ใช้ AI อย่างไรให้คุ้มทั้งเงินและทรัพยากร]]></description>
+      <pubDate>Wed, 13 May 2026 17:41:06 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Belief vs Behavior : How?]]></title>
+      <link>https://www.wannachar.com/articles/belief-vs-behavior-how/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/belief-vs-behavior-how/</guid>
+      <description><![CDATA[เมื่อความเชื่อขัดแย้งกับการกระทำ เราจัดการอย่างไร?]]></description>
+      <pubDate>Wed, 24 Sep 2025 17:43:47 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Motivation — Maslow’s Hierarchy of Needs]]></title>
+      <link>https://www.wannachar.com/articles/motivation-maslows-hierarchy-of-needs/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/motivation-maslows-hierarchy-of-needs/</guid>
+      <description><![CDATA[แรงจูงใจ — ลำดับขั้นความต้องการของมาสโลว์]]></description>
+      <pubDate>Sun, 21 Sep 2025 17:41:40 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Personalities in 8 Rooms]]></title>
+      <link>https://www.wannachar.com/articles/personality-in-8-rooms/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/personality-in-8-rooms/</guid>
+      <description><![CDATA[8 ห้องแห่งบุคลิกภาพ: คุณอยู่ห้องไหนบ้างคะ?]]></description>
+      <pubDate>Sun, 14 Sep 2025 16:06:26 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Leadership da series~2.Quick Win]]></title>
+      <link>https://www.wannachar.com/articles/leadership-da-series-2-quick-win/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/leadership-da-series-2-quick-win/</guid>
+      <description><![CDATA[People join companies, they leave managers มาต่อกันที่ Leadership da series หัวข้อที่ 2. Quick Win กันนะคะ ต่อเนื่องจากบทความแรก…]]></description>
+      <pubDate>Sat, 09 Aug 2025 07:48:59 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Leadership da series~1.Self Check]]></title>
+      <link>https://www.wannachar.com/articles/leadership-da-series-1-self-check/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/leadership-da-series-1-self-check/</guid>
+      <description><![CDATA[People join companies, they leave managers “ผู้คนสมัครงานเพราะต้องการเข้าร่วมงานกับองค์กร แต่พวกเขาต้องลาออกเพราะหัวหน้า”…]]></description>
+      <pubDate>Thu, 07 Aug 2025 20:39:11 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Resilient System Design]]></title>
+      <link>https://www.wannachar.com/articles/resilient-system-design/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/resilient-system-design/</guid>
+      <description><![CDATA[ออกแบบระบบให้ทำงานต่อได้ แม้ระบบต้นทางหรือปลายทางจะดับไป]]></description>
+      <pubDate>Sun, 22 Jun 2025 10:45:32 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window]]></title>
+      <link>https://www.wannachar.com/articles/johari-window/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/johari-window/</guid>
+      <description><![CDATA[เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ]]></description>
+      <pubDate>Fri, 04 Apr 2025 14:16:52 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[protect ‘race condition’]]></title>
+      <link>https://www.wannachar.com/articles/protect-race-condition/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/protect-race-condition/</guid>
+      <description><![CDATA[ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ]]></description>
+      <pubDate>Wed, 05 Feb 2025 16:36:49 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Book 'Software Architecture Patterns']]></title>
+      <link>https://www.wannachar.com/articles/book-software-architecture-patterns/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/book-software-architecture-patterns/</guid>
+      <description><![CDATA[บันทึกความประทับใจจากหนังสือ 'Software Architecture Patterns' เล่มเล็กแต่เนื้อแน่น]]></description>
+      <pubDate>Sun, 17 Nov 2024 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Feedback Sandwich]]></title>
+      <link>https://www.wannachar.com/articles/feedback-sandwich/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/feedback-sandwich/</guid>
+      <description><![CDATA[เทคนิคให้ feedback แบบแซนด์วิช — ชม แนะ ชม ให้คำติชมถึงใจคนฟังโดยไม่ทำร้ายกัน]]></description>
+      <pubDate>Thu, 13 Jun 2024 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Backend for Frontend (BFF)]]></title>
+      <link>https://www.wannachar.com/articles/backend-for-frontend-bff/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/backend-for-frontend-bff/</guid>
+      <description><![CDATA[รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด]]></description>
+      <pubDate>Mon, 19 Feb 2024 12:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

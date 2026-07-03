@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window — Kim Wannachar</title>
+<meta name="description" content="เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ">
+<meta property="og:title" content="รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window">
+<meta property="og:description" content="เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ">
+<meta property="og:image" content="https://www.wannachar.com/articles/johari-window/img-1.png">
+<meta property="og:url" content="https://www.wannachar.com/articles/johari-window/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<link rel="canonical" href="https://www.wannachar.com/articles/johari-window/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Kim Wannachar" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,500;1,300&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDF9FA;--pink:#F4D6E0;--pink-soft:#FAEBF0;--pink-deep:#DFA8BC;
+    --navy:#22304E;--navy-soft:#5D6A85;--navy-deep:#16213A;--line:#EDDFE4;--max:720px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Anuphan',sans-serif;background:var(--paper);color:var(--navy);line-height:1.85}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:10;background:rgba(253,249,250,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Trirong',serif;font-size:1.12rem;font-weight:500;
+    letter-spacing:.06em;text-decoration:none}
+  .logo span{color:var(--pink-deep)}
+  .back{font-size:.9rem;color:var(--navy-soft);text-decoration:none}
+  .back:hover{color:var(--navy-deep);text-decoration:underline}
+  main{padding:64px 0 80px}
+  .a-head{margin-bottom:40px}
+  .a-tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--navy-soft)}
+  .a-tag.mind{color:#B0728C}
+  h1{font-family:'Trirong',serif;font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.55;
+    font-weight:400;color:var(--navy-deep);margin:12px 0 14px}
+  .a-meta{font-family:'Trirong',serif;font-style:italic;font-size:.9rem;color:var(--navy-soft)}
+  .content{margin-top:8px}
+  .content p{margin:20px 0}
+  .content h3,.content h4{font-family:'Trirong',serif;font-weight:500;
+    color:var(--navy-deep);margin:36px 0 6px;line-height:1.6}
+  .content h3{font-size:1.35rem}
+  .content h4{font-size:1.12rem}
+  .content ul,.content ol{margin:20px 0;padding-left:26px}
+  .content li{margin:8px 0}
+  .content figure{margin:32px 0}
+  .content img{max-width:100%;height:auto;display:block;margin:0 auto}
+  .content figcaption{text-align:center;font-size:.82rem;color:var(--navy-soft);
+    margin-top:10px;font-style:italic}
+  .content blockquote{border-left:3px solid var(--pink-deep);background:var(--pink-soft);
+    padding:16px 22px;margin:28px 0;color:var(--navy-deep)}
+  .content pre{background:var(--navy-deep);color:#EFE6EA;padding:18px 20px;
+    overflow-x:auto;font-size:.85rem;line-height:1.6;margin:24px 0}
+  .content code{font-family:ui-monospace,Menlo,monospace}
+  .content a{color:var(--navy-deep);text-decoration:underline;
+    text-decoration-color:var(--pink-deep);text-underline-offset:3px}
+  .content hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+  .a-foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:.88rem;color:var(--navy-soft)}
+  .a-foot a{color:var(--navy-deep)}
+  footer{border-top:1px solid var(--line);padding:36px 0;background:var(--navy-deep);color:#EFE6EA}
+  .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+  .foot-inner a{color:#EFE6EA;text-decoration:none}
+  .foot-inner a:hover{text-decoration:underline;color:var(--pink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">Kim <span>Wannachar</span></a>
+    <a class="back" href="/#articles">← บทความทั้งหมด</a>
+  </div>
+</nav>
+
+<main>
+  <article class="wrap">
+    <div class="a-head">
+      <span class="a-tag mind">จิตวิทยา</span>
+      <h1>รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window</h1>
+      <div class="a-meta">เม.ย. 2025</div>
+    </div>
+    <div class="content">
+<p>วันก่อน..เราได้มีโอกาสเล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟังค่ะ และจากที่เพื่อนดูสนใจเราก็เลยอยากเขียนเล่าไว้เป็นบทความหน่อย อยากให้มีคนรู้จักโมเดลนี้กันเยอะๆ ค่ะ</p><figure><img alt="" src="img-1.png" /><figcaption>Prepared by kimwannachar</figcaption></figure><p>พวกเราก็ต่างมีพื้นที่ในใจบางอย่างที่เราเปิดเผย บางอย่างที่เราซ่อนไว้ และบางอย่างที่ตัวเราเองก็อาจไม่รู้เลยว่ามีอยู่จริง โมเดล “หน้าต่างโจฮารี” (Johari Window) จะสามารถช่วยให้เราตระหนักรู้ ทบทวน เข้าใจตัวเองและผู้อื่นได้ลึกซึ้งยิ่งขึ้น ผ่านการสำรวจ 4 พื้นที่สำคัญในจิตใจของเรากันค่ะ</p><p><strong>หน้าต่างโจฮารี คืออะไร<br></strong>คือ โมเดลที่ได้รับการพัฒนาโดยนักจิตวิทยา โจเซฟ ลุฟต์ (Joseph Luft) และ แฮร์ริงตัน อิงแฮม (Harrington Ingham) ในปี ค.ศ. 1955 จากนั้นจึงนำมาใช้ในกลุ่มช่วยเหลือตนเอง (self-help groups) และในองค์กรต่างๆ เป็นกิจกรรมเชิงประสบการณ์ (heuristic exercise) ที่ช่วยให้บุคคลได้เรียนรู้ตนเองผ่านการสื่อสารและการเปิดเผยตัวตน</p><p>ชื่อ “Johari” มาจากการรวมชื่อของผู้คิดค้นทั้งสองคน คือ <em>Jo</em>seph + <em>Hari</em>ngton</p><p><strong>แต่ละหน้าต่างหมายความว่าอย่างไร<br></strong>🟩 <strong>Open Area : I know, others know<br>เป็นพื้นที่เปิดเผย</strong> ทั้งเราและคนอื่นต่างก็รู้เกี่ยวกับตัวเรา เช่น นิสัย บุคลิก พฤติกรรมที่แสดงออกอย่างเปิดเผย เป็นต้น<br> &gt;&gt; หน้าต่างบานนี้จะเริ่มเปิดกว้างขยายพื้นที่มากขึ้นตามระดับความสัมพันธ์ ยิ่งสนิทสนมกัน ไว้วางใจ เปิดใจมากเท่าไหร่ พื้นที่ส่วนนี้ยิ่งขยายกว้างนั่นเอง</p><p>🟥 <strong>Blind Spot : I don’t know, others know<br></strong>เป็นพื้นที่จุดบอด ผู้อื่นจะมองเห็นในตัวเรา แต่ตัวเราไม่รู้ เช่น น้ำเสียง การแสดงออก หรือทัศนคติบางอย่างที่เราไม่ทันสังเกต<br>&gt;&gt; หน้าต่างบานนี้จะแคบลงเมื่อเรารับรู้จุดบอดตัวเอง อาจจะเป็นการเปิดใจรับฟัง feedback จากคนอื่น ซึ่งเราสามารถรับรู้ และเลือกใช้ในการพัฒนาตัวเองได้ต่อไป</p><p>🟨 <strong>Hidden Area : I know, others don’t know<br></strong>เป็นพื้นที่ซ่อนเร้น เรารู้เกี่ยวกับตัวเอง แต่ไม่ต้องการเปิดเผย เช่น ความกลัว ความรู้สึกบางอย่าง หรืออดีตที่ไม่อยากให้ใครรู้ <br>&gt;&gt; หน้าต่างบานนี้จะแคบลงเมื่อเรากล้าที่จะเปิดเผย หรือแชร์กับผู้อื่นอย่างปลอดภัย</p><p>⬛ <strong>The Unknown : I don’t know, others don’t know<br></strong>เป็นพื้นที่ที่ไม่รู้ร่วมกัน <br>น่ากลัวใช่ไหมคะ…. เราอาจเผลอถามตัวเองว่า มีด้วยหรือ? <br>สิ่งที่แม้แต่ตัวเราก็ไม่รู้ และคนอื่นก็ไม่รู้ เช่น ความสามารถที่ยังไม่ถูกค้นพบ หรือปมบางอย่างในใจที่ยังไม่ถูกรับรู้<br>&gt;&gt; หน้าต่างบานนี้จะแคบลงได้โดยการได้ลองสิ่งใหม่ๆ มีปฏิสัมพันธ์กับคนอื่นให้มากขึ้น และสะท้อนตัวเองอยู่เสมอ จะช่วยให้พื้นที่นี้ค่อยๆ เปิดเผยออกมา</p><p>ถ้าคุณกำลังอยู่ในช่วงที่อยากรู้จักตัวเองให้ลึกขึ้น หรือสร้างความสัมพันธ์ที่ดีขึ้น ลองใช้โมเดลนี้เป็นตัวช่วยดูนะคะ</p><p>เรากำลังคิดว่าจะนำโมเดลนี้ไปแชร์ให้น้องๆ ในทีมฟัง เพื่อให้ทีมเข้าใจตัวเองมากขึ้น คิดว่าน่าจะเป็นการช่วยให้พวกเราได้เปิดใจในการเรียนรู้และพัฒนาตัวเองต่อไปค่ะ</p><h4>แหล่งอ้างอิง</h4><ul><li><a href="https://en.wikipedia.org/wiki/Johari_window">https://en.wikipedia.org/wiki/Johari_window</a></li><li><a href="https://www.mindtools.com/au7v71d/the-johari-window">https://www.mindtools.com/au7v71d/the-johari-window</a></li><li><a href="https://fearlessculture.design/blog-posts/the-johari-window">https://fearlessculture.design/blog-posts/the-johari-window</a></li></ul>
+    </div>
+    <div class="a-foot">
+      บทความนี้เผยแพร่ครั้งแรกบน <a href="https://medium.com/@kimwannachar./%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81-4-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-johari-window-bb36100e1905" target="_blank" rel="noopener">Medium</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Kim Wannachar</span>
+    <a href="/">wannachar.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

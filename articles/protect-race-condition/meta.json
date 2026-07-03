@@ -1,0 +1,13 @@
+{
+  "slug": "protect-race-condition",
+  "title": "protect ‘race condition’",
+  "desc": "ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": true,
+  "date_th": "ก.พ. 2025",
+  "pub_raw": "Wed, 05 Feb 2025 16:36:49 GMT",
+  "pub_iso": "2025-02-05T16:36:49+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./protect-race-condition-1c1cbcbc22d0",
+  "image": "img-1.png"
+}

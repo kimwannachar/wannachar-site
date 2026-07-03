@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backend for Frontend (BFF) — Kim Wannachar</title>
+<meta name="description" content="รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด">
+<meta property="og:title" content="Backend for Frontend (BFF)">
+<meta property="og:description" content="รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด">
+<meta property="og:image" content="https://www.wannachar.com/articles/backend-for-frontend-bff/img-1.png">
+<meta property="og:url" content="https://www.wannachar.com/articles/backend-for-frontend-bff/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="th_TH">
+<link rel="canonical" href="https://www.wannachar.com/articles/backend-for-frontend-bff/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="Kim Wannachar" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,500;1,300&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDF9FA;--pink:#F4D6E0;--pink-soft:#FAEBF0;--pink-deep:#DFA8BC;
+    --navy:#22304E;--navy-soft:#5D6A85;--navy-deep:#16213A;--line:#EDDFE4;--max:720px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Anuphan',sans-serif;background:var(--paper);color:var(--navy);line-height:1.85}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:10;background:rgba(253,249,250,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Trirong',serif;font-size:1.12rem;font-weight:500;
+    letter-spacing:.06em;text-decoration:none}
+  .logo span{color:var(--pink-deep)}
+  .back{font-size:.9rem;color:var(--navy-soft);text-decoration:none}
+  .back:hover{color:var(--navy-deep);text-decoration:underline}
+  main{padding:64px 0 80px}
+  .a-head{margin-bottom:40px}
+  .a-tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--navy-soft)}
+  .a-tag.mind{color:#B0728C}
+  h1{font-family:'Trirong',serif;font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.55;
+    font-weight:400;color:var(--navy-deep);margin:12px 0 14px}
+  .a-meta{font-family:'Trirong',serif;font-style:italic;font-size:.9rem;color:var(--navy-soft)}
+  .content{margin-top:8px}
+  .content p{margin:20px 0}
+  .content h3,.content h4{font-family:'Trirong',serif;font-weight:500;
+    color:var(--navy-deep);margin:36px 0 6px;line-height:1.6}
+  .content h3{font-size:1.35rem}
+  .content h4{font-size:1.12rem}
+  .content ul,.content ol{margin:20px 0;padding-left:26px}
+  .content li{margin:8px 0}
+  .content figure{margin:32px 0}
+  .content img{max-width:100%;height:auto;display:block;margin:0 auto}
+  .content figcaption{text-align:center;font-size:.82rem;color:var(--navy-soft);
+    margin-top:10px;font-style:italic}
+  .content blockquote{border-left:3px solid var(--pink-deep);background:var(--pink-soft);
+    padding:16px 22px;margin:28px 0;color:var(--navy-deep)}
+  .content pre{background:var(--navy-deep);color:#EFE6EA;padding:18px 20px;
+    overflow-x:auto;font-size:.85rem;line-height:1.6;margin:24px 0}
+  .content code{font-family:ui-monospace,Menlo,monospace}
+  .content a{color:var(--navy-deep);text-decoration:underline;
+    text-decoration-color:var(--pink-deep);text-underline-offset:3px}
+  .content hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+  .a-foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:.88rem;color:var(--navy-soft)}
+  .a-foot a{color:var(--navy-deep)}
+  footer{border-top:1px solid var(--line);padding:36px 0;background:var(--navy-deep);color:#EFE6EA}
+  .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+  .foot-inner a{color:#EFE6EA;text-decoration:none}
+  .foot-inner a:hover{text-decoration:underline;color:var(--pink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">Kim <span>Wannachar</span></a>
+    <a class="back" href="/#articles">← บทความทั้งหมด</a>
+  </div>
+</nav>
+
+<main>
+  <article class="wrap">
+    <div class="a-head">
+      <span class="a-tag">System Design</span>
+      <h1>Backend for Frontend (BFF)</h1>
+      <div class="a-meta">ก.พ. 2024</div>
+    </div>
+    <div class="content">
+<p>เนื่องด้วย ขณะที่กิมเขียนบทความนี้ เป็นจังหวะชีวิตของกิมได้รับมอบหมายให้ทำ customer data integration platfom จึงไม่ได้ทำ application ที่เป็น customer touch point แต่เห็น application ต่างๆ ที่เป็นฝั่ง frontend ได้พูดถึงกันอย่างคึกคัก และนำมาใช้ในการ design architecture กัน ก็เลยเกิดความอยากเห็นอยากรู้ ว่า BFF นั้น คือ อะไร พิเศษอย่างไร มีข้อดี ข้อเสียอะไรบ้าง ก็เลยไปค้นๆ อ่านๆ คุยๆ มา และอยากเล่าให้คนที่ขี้สงสัยเหมือนกันได้รู้ด้วยจากบทความนี้ค่ะ</p><figure><img src="img-1.png" alt=""></figure><p><strong>BFF คือ อะไร<br></strong>Backend for Frontend เป็นการออกแบบ architecture รูปแบบหนึ่ง และจากการค้นไปเรื่อยของกิม ก็พบว่า คนที่เปิดตัว BFF ครั้งแรกให้ได้รู้จักกัน คือ Phil Calcdo at SoundCloud โดย concept ของการออกแบบนี้จะเป็นการเพิ่ม layer ในส่วนของ BFF มาคั่นกลางระหว่าง frontend กับ backend service ทำให้การรับส่งข้อมูลกันระหว่าง backend to frontend มีความเฉพาะเจาะจงมากขึ้น ซึ่งความเจาะจงนั้น เป็นการออกแบบให้เหมาะสมกับ frontend แต่ละ application เช่น web application, mobile application, web application on tablet/mobile เป็นต้น</p><p><strong>BFF พิเศษอย่างไร<em><br></em></strong>ด้วย design BFF architecture pattern นี้ มาตอบโจทย์ในเรื่องของการออกแบบ API ให้ frontend ได้นำของใช้ได้อย่างเฉพาะเจาะจงเหมาะสมกับแต่ละ application ที่มีความต้องการต่างกัน ไม่ว่าจะเป็นจำนวนของข้อมูล ข้อจำกัดในด้าน security และ network ของแต่ละ channel เอง ซึ่งความพิเศษ คือ การจัดส่งของใส่พานให้กับ frontend แบบ personalize frontend centric (อันนี้กิมแอบเลียนแบบ concept: personalize customer centric)</p><figure><img src="img-2.png" alt=""><figcaption>prepared by kimwannachar</figcaption></figure><p><strong>BFF มีข้อดีอะไร<br></strong>มีข้อดี 5 ข้อที่เป็นเหตุผลที่ BFF เป็นที่นิยมค่ะ<em> (เขียนเอาไว้ใน bff-pattern.com)</em><br>1. Adaptability to Platform Requirements: ทำให้ได้ของที่มีความเฉพาะเจาะจงในแต่ละ requirement ของ application ซึ่งในแต่ละ application ก็จะมี limitation ในการใช้งาน service backend ต่างกันออกไป เช่น รูปแบบของข้อมูล, รูปแบบในการ integration ระหว่าง backend/frontend หรือแม้กระทั่งในส่วนของ network และ security ในแต่ละ application ค่ะ</p><p>2. Decoupling of Concerns: การแยกกันระหว่างงาน frontend และ backend ทำให้เกิดความชัดเจนในการ develop (อันนี้แอบเห็นด้วยในมุมของการ manage team ที่แยกกันชัดระหว่าง frontend กับ backend developer ค่ะ ทีมก็ได้ทำของที่เข้ามือไปเลย งานก็ออกมาดีตามความถนัด)</p><p>3. Flexibility and Maintainability: พอมีการแยก layer ชัดแล้ว service ก็มีความเป็นอิสระ ทำให้ง่ายกับการประเมิน workload ทำให้ scale ได้อย่างแม่นยำ จะปรับปรุงเปลี่ยนแปลงก็มีผลกระทบกับ layer อื่นน้อยลงมากจากความที่ service มีอิสระในตัวเอง</p><p>4. Optimized Performance: จากที่เราเตรียมของให้เฉพาะเจาะจงกับ frontend แล้ว ก็ทำให้ผลประกอบการในการรับส่งของกันดีขึ้น ทำให้ performance ของระบบโดยรวม (E2E) ดีขึ้นนั่นเองค่ะ</p><p>5. Streamlined API Evolution: เมื่อ BFF ทำให้เกิดความคล่องตัวของ service ทีมพัฒนาของเราก็จะเกิดความคล่องตัวไปด้วย เอื้อให้เพิ่ม ลด ละ เลิก service ต่างๆ ได้ง่ายขึ้นค่ะ</p><p><strong>BFF มีข้อเสียอะไร<br></strong>แน่นอนว่า การเพิ่ม layer คือการเพิ่มงาน และจะต้องมีคนมา provide service ให้เฉพาะเจาะจงแต่ละ application รวมถึง maintenance ซึ่งตรงนี้ ความซับซ้อนก็จะเกิดขึ้นด้วยค่ะ</p><p>หวังว่าบทความนี้ จะทำหน้าที่ introduce BFF ได้อ่านสนุกเข้าใจง่ายค่ะ</p><p>ขอขอบคุณ แหล่งข้อมูลที่ทำให้เราได้เรียนรู้ไปในทุกวัน<br>Reference:<br><a href="https://bff-patterns.com/">https://bff-patterns.com</a></p><p><a href="https://www.somkiat.cc/backend-for-frontends/">https://www.somkiat.cc/backend-for-frontends/</a></p><p><a href="https://medium.com/@wsupajirakit/%E0%B9%83%E0%B8%AA%E0%B9%88%E0%B9%83%E0%B8%88%E0%B8%81%E0%B8%B1%E0%B8%9A-backend-for-frontend-bff-%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A1%E0%B8%B2%E0%B8%81%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99-a0bc35025de0">https://medium.com/@wsupajirakit/%E0%B9%83%E0%B8%AA%E0%B9%88%E0%B9%83%E0%B8%88%E0%B8%81%E0%B8%B1%E0%B8%9A-backend-for-frontend-bff-%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A1%E0%B8%B2%E0%B8%81%E0%B8%82%E0%B8%B6%E0%B9%89%E0%B8%99-a0bc35025de0</a></p>
+    </div>
+    <div class="a-foot">
+      บทความนี้เผยแพร่ครั้งแรกบน <a href="https://medium.com/@kimwannachar./backend-for-frontend-bff-18e6df72c0f8" target="_blank" rel="noopener">Medium</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 Kim Wannachar</span>
+    <a href="/">wannachar.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

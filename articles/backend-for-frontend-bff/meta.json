@@ -1,0 +1,13 @@
+{
+  "slug": "backend-for-frontend-bff",
+  "title": "Backend for Frontend (BFF)",
+  "desc": "รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": true,
+  "date_th": "ก.พ. 2024",
+  "pub_raw": "Mon, 19 Feb 2024 12:00:00 +0000",
+  "pub_iso": "2024-02-19T12:00:00+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./backend-for-frontend-bff-18e6df72c0f8",
+  "image": "img-1.png"
+}
