@@ -62,7 +62,11 @@
     "desc_en": "Told a friend about the Johari Window — then wanted to write it down properly.",
     "tag_th": "จิตวิทยา",
     "tag_en": "Psychology",
-    "swatch": "mind"
+    "swatch": "mind",
+    "popular": true
+  },
+  "leadership-da-series-1-self-check-9f1a17e526a0": {
+    "popular": true
   },
   "protect-race-condition-1c1cbcbc22d0": {
     "title_th": "Protect 'Race Condition'",
@@ -71,6 +75,7 @@
     "desc_en": "Designing race conditions out of your system before they find you in production.",
     "tag_th": "System Design",
     "tag_en": "System Design",
-    "swatch": "sys"
+    "swatch": "sys",
+    "popular": true
   }
 }
