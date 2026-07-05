@@ -34,6 +34,8 @@ SITE = "https://www.wannachar.com"
 FEED_URL = "https://medium.com/feed/@kimwannachar."
 START_MARKER = "<!-- MEDIUM-ARTICLES:START -->"
 END_MARKER = "<!-- MEDIUM-ARTICLES:END -->"
+COUNT_START = "<!-- ARTICLE-COUNT:START -->"
+COUNT_END = "<!-- ARTICLE-COUNT:END -->"
 
 TH_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
              "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."]
@@ -353,20 +355,30 @@ def main():
     if OVERRIDES_PATH.exists():
         overrides = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
 
-    metas = [process_item(item, overrides) for item in items]
+    fresh = [process_item(item, overrides) for item in items]
+
+    # The homepage is a showroom of EVERY article — feed items plus any
+    # manually imported ones — sorted newest first.
+    all_metas = [json.loads(f.read_text(encoding="utf-8"))
+                 for f in ARTICLES_DIR.glob("*/meta.json")]
+    all_metas.sort(key=lambda m: m["pub_iso"], reverse=True)
 
     html_text = INDEX.read_text(encoding="utf-8")
     if START_MARKER not in html_text or END_MARKER not in html_text:
         print("Markers not found in index.html", file=sys.stderr)
         sys.exit(1)
-    new_section = "\n\n".join(render_card(m) for m in metas)
+    new_section = "\n\n".join(render_card(m) for m in all_metas)
     pattern = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.S)
-    INDEX.write_text(
-        pattern.sub(f"{START_MARKER}\n{new_section}\n    {END_MARKER}", html_text),
-        encoding="utf-8")
+    html_text = pattern.sub(
+        f"{START_MARKER}\n{new_section}\n    {END_MARKER}", html_text)
+    count_pattern = re.compile(re.escape(COUNT_START) + r".*?" + re.escape(COUNT_END), re.S)
+    html_text = count_pattern.sub(
+        f"{COUNT_START}ทั้งหมด {len(all_metas)} บทความ{COUNT_END}", html_text)
+    INDEX.write_text(html_text, encoding="utf-8")
 
     total = build_feed()
-    print(f"Generated {len(metas)} article pages from the feed; feed.xml has {total} items.")
+    print(f"Refreshed {len(fresh)} pages from the feed; homepage and "
+          f"feed.xml now list {total} articles.")
 
 
 if __name__ == "__main__":
