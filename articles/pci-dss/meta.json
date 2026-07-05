@@ -1,0 +1,13 @@
+{
+  "slug": "pci-dss",
+  "title": "ว้าวุ่นไปกับ PCI DSS",
+  "desc": "ด้วยงานที่เราสร้างช่วงนี้ คือ Customer Data Integration Platform (CDI) มันมีอันต้องให้ไปแตะไปต้อง card data และก็คือ audit เข้าจร้า",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": false,
+  "date_th": "ก.ย. 2023",
+  "pub_raw": "Fri, 29 Sep 2023 06:59:54 +0000",
+  "pub_iso": "2023-09-29T06:59:54.040000+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./-------------PCI-DSS-af7e702dabd4",
+  "image": "img-1.png"
+}

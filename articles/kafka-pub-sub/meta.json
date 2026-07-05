@@ -1,0 +1,13 @@
+{
+  "slug": "kafka-pub-sub",
+  "title": "อะไร Kafka อะไร Pub/Sub",
+  "desc": "จากประสบการณ์ที่คลุกคลีตีโมงกับ Kafka เอย Pub/Sub เอย มาเป็นปีข้ามปี มีพี่ๆ เพื่อนๆ น้องๆ ที่ไม่ใช่เทคนิคอลมาถามกิมเรื่อยๆ เสมอๆ ว่า “อะไร คือ Kafka…",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": false,
+  "date_th": "มิ.ย. 2021",
+  "pub_raw": "Sun, 13 Jun 2021 08:55:53 +0000",
+  "pub_iso": "2021-06-13T08:55:53.567000+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./-----Kafka------Pub-Sub-f1ccda346bbd",
+  "image": "img-1.png"
+}

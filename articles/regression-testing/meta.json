@@ -1,0 +1,13 @@
+{
+  "slug": "regression-testing",
+  "title": "Regression Testing",
+  "desc": "Regression Testing คืออะไร?คือ การทดสอบระบบทุก function end to end เพื่อที่จะได้ผลทดสอบว่า ระบบยังทำงานได้ตามความคาดหวัง…",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": false,
+  "date_th": "ธ.ค. 2022",
+  "pub_raw": "Tue, 27 Dec 2022 15:30:42 +0000",
+  "pub_iso": "2022-12-27T15:30:42.509000+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./Regression-Testing-fe173f2f3643",
+  "image": null
+}
