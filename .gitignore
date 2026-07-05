@@ -2,3 +2,7 @@
 .claude/settings.local.json
 .claude/launch.json
 __pycache__/
+
+# Local staging / source material — never publish
+mySharing/
+medium-export*
