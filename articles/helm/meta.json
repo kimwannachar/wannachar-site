@@ -1,0 +1,13 @@
+{
+  "slug": "helm",
+  "title": "รู้จัก HELM กันนะ",
+  "desc": "เจ้า helm ถูกสร้างขึ้นในปี 2015 โดย Deis (ที่ต่อมาถูก Microsoft ซื้อไป) และได้ถูกแนะนำให้เป็นที่รู้จักในงานเปิดตัว KubeCon ด้วยชื่อ Helm…",
+  "tag": "System Design",
+  "swatch": "sys",
+  "popular": false,
+  "date_th": "เม.ย. 2023",
+  "pub_raw": "Sun, 16 Apr 2023 13:17:15 +0000",
+  "pub_iso": "2023-04-16T13:17:15.092000+00:00",
+  "medium_url": "https://medium.com/@kimwannachar./-------HELM-------6b18fb102c46",
+  "image": "img-1.png"
+}

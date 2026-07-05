@@ -40,11 +40,21 @@ COUNT_END = "<!-- ARTICLE-COUNT:END -->"
 TH_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
              "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."]
 
-SYS_KEYWORDS = ["system-design", "backend", "engineering", "architecture",
-                "software", "frugal-ai", "devops", "database", "distributed", "ai"]
-MIND_KEYWORDS = ["psycholog", "leadership", "personality", "self-improvement",
-                  "maslow", "team-building", "johari", "motivation",
-                  "behavior", "belief", "mind"]
+SYS_KEYWORDS = ["system-design", "system design", "backend", "engineering",
+                "architecture", "software", "frugal-ai", "frugal ai", "devops",
+                "database", "distributed", "kafka", "pub/sub", "pub sub",
+                "regression", "testing", "pci", "dss", "helm", "user story",
+                "race condition", "audit", "resilient", "api", "bff"]
+# "mind" thread: psychology, leadership, people, self-development, books
+MIND_KEYWORDS = ["psycholog", "จิตวิทยา", "leadership", "leader", "coach",
+                  "personality", "self", "maslow", "team", "johari", "motivation",
+                  "behavior", "belief", "mind", "feedback", "นินทา", "empathy",
+                  "nvc", "satir", "กรุณา", "kindness", "lie", "harassment",
+                  "sleep", "นอน", "dopamine", "โดพามีน", "สติ", "mindful",
+                  "หนังสือ", "book", "review", "รีวิว", "reflect", "นิสัย",
+                  "habit", "bujo", "bullet journal", "disneyland", "facilitat",
+                  "capacity", "จดจ่อ", "focus", "อ่อนแอ", "อาหารใจ", "ชีวิต",
+                  "รับผิดชอบ", "impress", "leading change"]
 
 UA = {"User-Agent": "Mozilla/5.0"}
 
