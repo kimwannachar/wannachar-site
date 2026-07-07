@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kim Wannachar — นักอ่านที่อยากเป็นนักเขียน</title>
-<meta name="description" content="บันทึกการเดินทางของนักพัฒนาซอฟต์แวร์คนหนึ่ง — บทความ system design จับต้องได้ จิตวิทยา และ leadership ภาษาไทย">
-<meta property="og:title" content="Kim Wannachar — นักอ่านที่อยากเป็นนักเขียน">
-<meta property="og:description" content="บทความ system design จับต้องได้ จิตวิทยา และ leadership ภาษาไทย">
+<title>Kim Wannachar — คน ระบบ และสิ่งที่ไม่เคยเปลี่ยน</title>
+<meta name="description" content="บันทึกจากสองโลกของคนสร้างระบบมา 20 ปี — โลกของระบบ และโลกของคน เพราะเทคโนโลยีเปลี่ยนทุกวัน แต่คนกับระบบแทบไม่เคยเปลี่ยน">
+<meta property="og:title" content="Kim Wannachar — คน ระบบ และสิ่งที่ไม่เคยเปลี่ยน">
+<meta property="og:description" content="บันทึกจากสองโลกของคนสร้างระบบมา 20 ปี — โลกของระบบ และโลกของคน เพราะเทคโนโลยีเปลี่ยนทุกวัน แต่คนกับระบบแทบไม่เคยเปลี่ยน">
 <meta property="og:image" content="https://www.wannachar.com/kim-avatar.png">
 <meta property="og:url" content="https://www.wannachar.com/">
 <meta property="og:type" content="website">
@@ -25,6 +25,8 @@
     --navy:#22304E;          /* navy หลัก */
     --navy-soft:#5D6A85;     /* navy อ่อนสำหรับข้อความรอง */
     --navy-deep:#16213A;
+    --sage:#7BA088;          /* เขียวเสจสำหรับหมวด 'ชีวิต' */
+    --sage-deep:#4F7A5E;     /* เขียวเข้มสำหรับ tag/ข้อความ */
     --line:#EDDFE4;
     --max:1040px;
   }
@@ -70,7 +72,19 @@
     text-decoration:underline;text-decoration-thickness:1px;
     text-decoration-color:var(--pink-deep);text-underline-offset:.24em;
   }
-  .hero-sub{margin-top:26px;max-width:56ch;color:var(--navy-soft);font-size:1.03rem}
+  .hero-identity{
+    font-family:'Trirong',serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.15rem,2.6vw,1.5rem);color:var(--navy-deep);
+    max-width:40ch;line-height:1.5;margin-top:6px;
+  }
+  .hero-sub{margin-top:30px;max-width:56ch;color:var(--navy-soft);font-size:1.03rem;line-height:1.85}
+  .hero-sub .lead{color:var(--navy-deep);font-weight:500}
+  .hero-sub strong{color:var(--navy-deep);font-weight:600}
+  .hero-close{
+    margin-top:26px;max-width:56ch;font-family:'Trirong',serif;font-style:italic;
+    font-size:.98rem;color:var(--navy-soft);
+    padding-left:16px;border-left:2px solid var(--pink-deep);
+  }
   .hero-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
   .btn{
     display:inline-block;padding:14px 34px;border-radius:0;
@@ -95,6 +109,7 @@
   .dot{width:7px;height:7px;border-radius:50%;display:inline-block}
   .dot-sys{background:var(--navy)}
   .dot-mind{background:var(--pink-deep)}
+  .dot-life{background:var(--sage)}
 
   /* ---------- article list ---------- */
   .article{
@@ -104,6 +119,7 @@
   .swatch{width:3px;min-height:60px;height:100%;border-radius:0}
   .sw-sys{background:var(--navy)}
   .sw-mind{background:var(--pink-deep)}
+  .sw-life{background:var(--sage)}
   .article h3{font-weight:500;font-size:1.13rem;line-height:1.5}
   .article h3 a:hover{color:var(--pink-deep)}
   .article .sw-sys ~ div h3 a:hover{color:var(--navy-deep)}
@@ -115,6 +131,7 @@
   }
   .tag-sys{color:var(--navy-soft)}
   .tag-mind{color:#B0728C}
+  .tag-life{color:var(--sage-deep)}
   .pop{
     display:inline-block;margin-left:10px;padding:1px 10px;
     font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
@@ -183,22 +200,22 @@
 <header id="top">
   <div class="wrap">
     <div class="eyebrow">
-      Reader · Writer · Developer — Bangkok
-
+      reader · builder · learner — Bangkok
     </div>
-    <h1>
-      นักอ่าน<br>ที่อยากเป็น<span class="hl">นักเขียน</span>
-
-    </h1>
-    <p class="hero-sub">
-      สวัสดีค่ะ ฉันวรรณชา นักอ่านที่อยากเป็นนักเขียน
-      ฉันอ่านเพื่อเข้าใจ ฉันเขียนเพื่อจัดระเบียบความคิด และฉันแบ่งปัน
-      เพราะเชื่อว่าความรู้จะมีคุณค่าที่สุดเมื่อมันถูกส่งต่อ
-      เว็บนี้คือบันทึกการเดินทางของนักพัฒนาซอฟต์แวร์คนหนึ่ง ที่กำลังเรียนรู้การออกแบบระบบ
-      การนำทีม และการใช้ชีวิต เพื่อเติบโตอย่างต่อเนื่อง
-      และวันหนึ่งจะมีศักยภาพมากพอที่จะแบ่งปัน
-
+    <p class="hero-identity">
+      a reader, a builder, a learner who loves to make things happen.
     </p>
+    <p class="hero-sub">
+      <span class="lead">สวัสดีค่ะ ฉันวรรณชา</span><br>
+      ที่นี่คือบันทึกจากสองโลกที่ฉันอยู่มามากกว่า 20 ปี —
+      โลกของ<strong>ระบบ</strong> ที่ฉันออกแบบและสร้างมันทุกวัน
+      และโลกของ<strong>คน</strong> ที่ทำให้ระบบเกิดขึ้นจริง หรือไม่มีวันได้เกิด
+    </p>
+    <p class="hero-sub" style="margin-top:16px">
+      ฉันจดสิ่งที่เห็นไว้ที่นี่ เผื่อบทเรียนที่ฉันเคยจ่ายราคาแพง
+      จะช่วยให้ใครบางคนจ่ายถูกลง
+    </p>
+    <p class="hero-close">เทคโนโลยีเปลี่ยนทุกวัน แต่คนกับระบบแทบไม่เคยเปลี่ยน</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#articles">อ่านบทความล่าสุด</a>
       <a class="btn btn-ghost" href="https://medium.com/@kimwannachar." target="_blank" rel="noopener">ทุกบทความบน Medium</a>
@@ -213,8 +230,9 @@
       <span class="sec-note"><!-- ARTICLE-COUNT:START -->ทั้งหมด 44 บทความ<!-- ARTICLE-COUNT:END --></span>
     </div>
     <div class="legend">
-      <span><i class="dot dot-sys"></i>System Design</span>
-      <span><i class="dot dot-mind"></i>จิตวิทยา · Leadership</span>
+      <span><i class="dot dot-sys"></i>ระบบ</span>
+      <span><i class="dot dot-mind"></i>คน</span>
+      <span><i class="dot dot-life"></i>ชีวิต</span>
     </div>
 
     <!-- MEDIUM-ARTICLES:START -->
@@ -223,7 +241,7 @@
       <div>
         <h3><a href="/articles/design-audit-log/">System Design — Audit Log</a></h3>
         <p>มาออกแบบ audit log ตามระดับการใช้งานกันนะคะ</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">มิ.ย. 2026</span>
     </article>
@@ -233,17 +251,17 @@
       <div>
         <h3><a href="/articles/frugal-ai/">Frugal AI</a></h3>
         <p>'ปัญญาประดิษฐ์แบบคุ้มค่า' — ใช้ AI อย่างไรให้คุ้มทั้งเงินและทรัพยากร</p>
-        <span class="tag tag-sys">AI · Engineering</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">พ.ค. 2026</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/12-5step-corporate/">น้องริเริ่มลูกชายพี่กิมอายุ 12 ปี สอนเทคนิคเดียวกันนี้ให้ ตอนที่พี่กิมต้องจำ 5step corporate…</a></h3>
         <p>น้องริเริ่มลูกชายพี่กิมอายุ 12 ปี สอนเทคนิคเดียวกันนี้ให้ ตอนที่พี่กิมต้องจำ 5step corporate valuation ไปสอบค่ะน่าสนใจมากค่ะ Gen Alpha</p>
-        <span class="tag tag-sys">บทความ</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ม.ค. 2026</span>
     </article>
@@ -253,7 +271,7 @@
       <div>
         <h3><a href="/articles/belief-vs-behavior-how/">Belief vs Behavior : How?</a></h3>
         <p>เมื่อความเชื่อขัดแย้งกับการกระทำ เราจัดการอย่างไร?</p>
-        <span class="tag tag-mind">จิตวิทยา</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ก.ย. 2025</span>
     </article>
@@ -263,7 +281,7 @@
       <div>
         <h3><a href="/articles/motivation-maslows-hierarchy-of-needs/">Motivation — Maslow’s Hierarchy of Needs</a></h3>
         <p>แรงจูงใจ — ลำดับขั้นความต้องการของมาสโลว์</p>
-        <span class="tag tag-mind">จิตวิทยา</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ก.ย. 2025</span>
     </article>
@@ -273,7 +291,7 @@
       <div>
         <h3><a href="/articles/personality-in-8-rooms/">Personalities in 8 Rooms</a></h3>
         <p>8 ห้องแห่งบุคลิกภาพ: คุณอยู่ห้องไหนบ้างคะ?</p>
-        <span class="tag tag-mind">จิตวิทยา</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ก.ย. 2025</span>
     </article>
@@ -283,7 +301,7 @@
       <div>
         <h3><a href="/articles/leadership-da-series-2-quick-win/">Leadership da series~2.Quick Win</a></h3>
         <p>People join companies, they leave managers มาต่อกันที่ Leadership da series หัวข้อที่ 2. Quick Win กันนะคะ ต่อเนื่องจากบทความแรก…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ส.ค. 2025</span>
     </article>
@@ -293,7 +311,7 @@
       <div>
         <h3><a href="/articles/leadership-da-series-1-self-check/">Leadership da series~1.Self Check</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>People join companies, they leave managers “ผู้คนสมัครงานเพราะต้องการเข้าร่วมงานกับองค์กร แต่พวกเขาต้องลาออกเพราะหัวหน้า”…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ส.ค. 2025</span>
     </article>
@@ -303,7 +321,7 @@
       <div>
         <h3><a href="/articles/resilient-system-design/">Resilient System Design</a></h3>
         <p>ออกแบบระบบให้ทำงานต่อได้ แม้ระบบต้นทางหรือปลายทางจะดับไป</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">มิ.ย. 2025</span>
     </article>
@@ -313,7 +331,7 @@
       <div>
         <h3><a href="/articles/johari-window/">รู้จัก 4 พื้นที่ในใจผ่านโมเดล Johari Window</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ</p>
-        <span class="tag tag-mind">จิตวิทยา</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">เม.ย. 2025</span>
     </article>
@@ -323,7 +341,7 @@
       <div>
         <h3><a href="/articles/protect-race-condition/">protect ‘race condition’</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ก.พ. 2025</span>
     </article>
@@ -333,7 +351,7 @@
       <div>
         <h3><a href="/articles/back-to-basic-prioritization/">back to basic ~ prioritization</a></h3>
         <p>การจัดลำดับความสำคัญ นั้น สำคัญ</p>
-        <span class="tag tag-sys">บทความ</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ธ.ค. 2024</span>
     </article>
@@ -343,7 +361,7 @@
       <div>
         <h3><a href="/articles/book-software-architecture-patterns/">Book 'Software Architecture Patterns'</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>บันทึกความประทับใจจากหนังสือ 'Software Architecture Patterns' เล่มเล็กแต่เนื้อแน่น</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">พ.ย. 2024</span>
     </article>
@@ -353,7 +371,7 @@
       <div>
         <h3><a href="/articles/nvc-self-empathy/">#NVC~Self Empathy</a></h3>
         <p>สื่อสารกับตัวของเราเอง~เพื่อเข้าใจตัวเอง</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">พ.ย. 2024</span>
     </article>
@@ -363,7 +381,7 @@
       <div>
         <h3><a href="/articles/white-lie/">White lie</a></h3>
         <p>โกหกขาว คือ สิ่งที่เราเลือกโกหกเล็กๆ น้อยๆ บิดเบือนเรื่องราวด้วยความหวังดี เป็นการโกหกด้วยเจตนาดี เพื่อปกป้องดูแลจิตใจคนที่เราห่วงใย</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ก.ย. 2024</span>
     </article>
@@ -373,7 +391,7 @@
       <div>
         <h3><a href="/articles/story-33301a392808/">การกระตุ้นความรับผิดชอบด้วยสังคม</a></h3>
         <p>Social Accountability System</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ก.ค. 2024</span>
     </article>
@@ -383,7 +401,7 @@
       <div>
         <h3><a href="/articles/feedback-sandwich/">Feedback Sandwich</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>เทคนิคให้ feedback แบบแซนด์วิช — ชม แนะ ชม ให้คำติชมถึงใจคนฟังโดยไม่ทำร้ายกัน</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">มิ.ย. 2024</span>
     </article>
@@ -393,7 +411,7 @@
       <div>
         <h3><a href="/articles/myimpress/">myImpress ‘หนังสือจิตวิทยาสายดาร์ก’</a></h3>
         <p>เป็นหนังสือที่ได้ยิน ได้ฟัง คนพูดถึงเป็นอย่างมากเมื่อปี 2023 ที่ผ่านมา อดใจไม่ไหว อยากรู้ว่าจะดาร์กเท่าไหนกันนะ เลยมาลองอ่านดูค่ะ…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">มี.ค. 2024</span>
     </article>
@@ -403,7 +421,7 @@
       <div>
         <h3><a href="/articles/backend-for-frontend-bff/">Backend for Frontend (BFF)</a><span class="pop">👏 ยอดนิยม</span></h3>
         <p>รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ก.พ. 2024</span>
     </article>
@@ -413,7 +431,7 @@
       <div>
         <h3><a href="/articles/back-to-basic-user-story/">back to basic ~ user story</a></h3>
         <p>ทบทวนพื้นฐานในการทำ user story</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ก.พ. 2024</span>
     </article>
@@ -423,7 +441,7 @@
       <div>
         <h3><a href="/articles/self-reflect-2024/">Self Reflect~2024</a></h3>
         <p>ว่าด้วยเรื่องการชวนทีมทำ self reflect เพื่อเชื่อมโยงกับตัวเองให้ได้เป้าหมายในปีใหม่นี้กันค่ะ</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ม.ค. 2024</span>
     </article>
@@ -433,17 +451,17 @@
       <div>
         <h3><a href="/articles/story-47e12a4a6649/">ความกรุณา</a></h3>
         <p>ตอนที่กิมไปเรียน NVC อาจารย์ได้สอนว่า “มนุษย์ทุกคนมีจิตใจที่มีความกรุณาเป็นพื้นฐาน” ตอนที่เรียนก็เข้าใจแบบไม่มีข้อสงสัย…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ธ.ค. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/mulled-wine/">Mulled Wine</a></h3>
         <p>เรามีโอกาสได้ลองชิมไวน์ต้มครั้งแรกที่ร้านไวน์ในนิมมานเชียงใหม่ ไม่ค่อยว้าวนัก แค่รู้สึกว่าอุ่นดีจัง แต่ดื่มยากเครื่องเทศแรง รสชาติก็ไม่ถูกใจ</p>
-        <span class="tag tag-sys">บทความ</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ธ.ค. 2023</span>
     </article>
@@ -453,7 +471,7 @@
       <div>
         <h3><a href="/articles/sexual-harassment/">Sexual Harassment</a></h3>
         <p>อยากสอนน้องหญิงทั้งหลายว่า ถ้าเจอคนที่ล้ำเส้นหยาบโลน ให้กลับมาทบทวนตัวเองก่อน ว่าเราไม่ได้เริ่มก่อน…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">พ.ย. 2023</span>
     </article>
@@ -463,37 +481,37 @@
       <div>
         <h3><a href="/articles/pci-dss/">ว้าวุ่นไปกับ PCI DSS</a></h3>
         <p>ด้วยงานที่เราสร้างช่วงนี้ คือ Customer Data Integration Platform (CDI) มันมีอันต้องให้ไปแตะไปต้อง card data และก็คือ audit เข้าจร้า</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ก.ย. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/story-5a2bbcaa5929/">นอนไม่หลับ..มาแก้ที่ปลายเหตุ</a></h3>
         <p>อยากจะเขียนบทความนี้เพื่อแชร์การแก้ปัญหานอนไม่หลับ หรือหลับไม่ดี กันค่ะ แต่เป็นการแก้ที่ปลายเหตุนะคะ</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ก.ย. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/story-28ef761098eb/">ควบคุมโดพามีนเพิ่มการจดจ่อ</a></h3>
         <p>Controlling your dopamine for focus</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ก.ย. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/24/">เมื่อคุณมีเวลาอ่อนแอเพียง 24 ชั่วโมง</a></h3>
         <p>สิ่งแรกเลยที่คุณต้องมี คือ สติ เพราะไม่ว่าคุณจะเสียใจอ่อนแอแค่ไหน จงมี สติ เพื่อไม่ให้คุณไปทำเรื่องเสียหายให้กับตัวเอง…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ก.ย. 2023</span>
     </article>
@@ -503,7 +521,7 @@
       <div>
         <h3><a href="/articles/training-leader-as-coach-2/">Training “Leader as Coach” #2</a></h3>
         <p>ขอขอบคุณผู้สอน Montri Saengpattrachai, M.D.Professional Certified Coach, Executive and Leader Coach</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">มิ.ย. 2023</span>
     </article>
@@ -513,7 +531,7 @@
       <div>
         <h3><a href="/articles/training-smart-feedback-for-building-people-capacity/">Training “Smart Feedback for Building People Capacity”</a></h3>
         <p>ขอขอบคุณผู้สอน Montri Saengpattrachai, M.D. Professional Certified Coach, Executive and Leader Coach</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">เม.ย. 2023</span>
     </article>
@@ -523,27 +541,27 @@
       <div>
         <h3><a href="/articles/helm/">รู้จัก HELM กันนะ</a></h3>
         <p>เจ้า helm ถูกสร้างขึ้นในปี 2015 โดย Deis (ที่ต่อมาถูก Microsoft ซื้อไป) และได้ถูกแนะนำให้เป็นที่รู้จักในงานเปิดตัว KubeCon ด้วยชื่อ Helm…</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">เม.ย. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-sys" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/read-out-loud/">read out LOUD!</a></h3>
         <p>read out LOUD!</p>
-        <span class="tag tag-sys">บทความ</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">มี.ค. 2023</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/trance-moment-for-sleep/">Trance Moment for sleep</a></h3>
         <p>เข้าสู่ภวังค์เพื่อแก้อาการนอนไม่หลับ</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ม.ค. 2023</span>
     </article>
@@ -553,17 +571,17 @@
       <div>
         <h3><a href="/articles/regression-testing/">Regression Testing</a></h3>
         <p>Regression Testing คืออะไร?คือ การทดสอบระบบทุก function end to end เพื่อที่จะได้ผลทดสอบว่า ระบบยังทำงานได้ตามความคาดหวัง…</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">ธ.ค. 2022</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/let-s-start-bujo/">let’s start ‘BUJO’</a></h3>
         <p>The Bullet Journal Method</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ธ.ค. 2022</span>
     </article>
@@ -573,7 +591,7 @@
       <div>
         <h3><a href="/articles/read-leading-change-2-12/">read “LEADING CHANGE” [2/12]</a></h3>
         <p>บทที่ 2 การเปลี่ยนแปลงที่ประสบความสำเร็จ และพลังที่ขับเคลื่อนการเปลี่ยนแปลงดังกล่าว</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ต.ค. 2022</span>
     </article>
@@ -583,37 +601,37 @@
       <div>
         <h3><a href="/articles/read-leading-change-1-12/">read “LEADING CHANGE” [1/12]</a></h3>
         <p>- เกิดจากความผิดพลาด 8 อย่าง -</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">ต.ค. 2022</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/disneyland/">รีวิวหนังสือ ‘Disneyland ทำอะไรทำไมใครๆ ก็หลงรัก’</a></h3>
         <p>สวัสดีค่ะ ต้องขอเล่าก่อนว่า ตอนที่กิมหยิบหนังสือเล่มนี้ขึ้นมาจากชั้นที่ร้านหนังสือมาเก็บเข้ากองดอง คือ คิดว่าจะเป็นแนว Marketing แต่พอหยิบมาอ่าน เอ๊ะ…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">มี.ค. 2022</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/12-1/">หนังสือ#12 นิสัยเปลี่ยนชีวิตใน 1 ปี</a></h3>
         <p>นักเขียน นิ้วกลม</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">ก.พ. 2022</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/satiroutput-1/">satirOUTPUT#1 อาหารใจ</a></h3>
         <p>สวัสดีค่ะ กิมมีโอกาสได้ไปเรียนซาเทียร์มา 3 วัน ซึ่งเป็นคอร์สที่ลงเรียนไว้ตั้งแต่ก่อนโควิด และเลื่อนหลบรอโควิดซามาเรื่อยๆ ค่ะ จนในที่สุดก็ได้เรียนแล้ว…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">พ.ย. 2021</span>
     </article>
@@ -623,7 +641,7 @@
       <div>
         <h3><a href="/articles/kafka-pub-sub/">อะไร Kafka อะไร Pub/Sub</a></h3>
         <p>จากประสบการณ์ที่คลุกคลีตีโมงกับ Kafka เอย Pub/Sub เอย มาเป็นปีข้ามปี มีพี่ๆ เพื่อนๆ น้องๆ ที่ไม่ใช่เทคนิคอลมาถามกิมเรื่อยๆ เสมอๆ ว่า “อะไร คือ Kafka…</p>
-        <span class="tag tag-sys">System Design</span>
+        <span class="tag tag-sys">ระบบ</span>
       </div>
       <span class="meta">มิ.ย. 2021</span>
     </article>
@@ -633,17 +651,17 @@
       <div>
         <h3><a href="/articles/feedback-vs/">Feedback vs นินทา</a></h3>
         <p>พวกเรารู้กันอยู่แล้วว่า feedback เป็นสารอาหารสำคัญที่ทำให้มนุษย์พัฒนา แต่การที่เราจะส่ง feedback ไปให้คนนั้นๆ ก็เป็นเรื่องยากเหลือเกิน เพราะ feedback…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">มี.ค. 2021</span>
     </article>
 
     <article class="article">
-      <div class="swatch sw-mind" aria-hidden="true"></div>
+      <div class="swatch sw-life" aria-hidden="true"></div>
       <div>
         <h3><a href="/articles/story-d091aabbb5e0/">นอนดีมีสุข — มาปรับนาฬิกาชีวิตกันเถอะ</a></h3>
         <p>เท่าที่สังเกตุ และที่ได้เม้ามอยกับเพื่อนๆ ที่ทำงานสายไอทีด้วยกัน ส่วนใหญ่จะประสบปัญหาเกี่ยวกับการนอนกันค่ะ ด้วยงานหรืออะไรก็แล้วแต่ ทำให้เพื่อนๆ…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-life">ชีวิต</span>
       </div>
       <span class="meta">พ.ค. 2020</span>
     </article>
@@ -653,7 +671,7 @@
       <div>
         <h3><a href="/articles/facilitative-2-home/">หลบโควิดแวะเรียน Facilitative#2@Home</a></h3>
         <p>เมื่อรัฐบาลประกาศให้เดือนพฤษภาคม มีวันหยุดได้ตามปกติ หลังจากที่มีความลุ้นเบาๆ ว่าจะได้เรียนไหมนะ ในที่สุด!!! ก็ได้มีโอกาสเรียน Facilitative#2…</p>
-        <span class="tag tag-mind">จิตวิทยา · Leadership</span>
+        <span class="tag tag-mind">คน</span>
       </div>
       <span class="meta">พ.ค. 2020</span>
     </article>
@@ -664,25 +682,25 @@
 <section id="series">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Series · Selected Work</h2>
+      <h2>ซีรีส์ที่เขียนต่อเนื่อง</h2>
     </div>
     <div class="port-grid">
       <div class="card" style="--card-accent:var(--pink-deep)">
         <span class="kind">ซีรีส์</span>
         <h3>Leadership da series</h3>
-        <p>"People join companies, they leave managers" — ซีรีส์ว่าด้วยการเป็นหัวหน้าที่คนไม่อยากจากไป ตอนที่ 1: Self Check และตอนที่ 2: Quick Win
+        <p>บันทึกการเดินทางจากคนทำระบบ สู่คนนำทีม ว่าด้วยบทเรียนที่ตำแหน่งไม่เคยสอน แต่สถานการณ์สอน
            </p>
       </div>
       <div class="card" style="--card-accent:var(--navy)">
         <span class="kind">ซีรีส์</span>
         <h3>System Design in Practice</h3>
-        <p>บทความ system design ภาษาไทยที่อ่านง่ายและใช้ได้จริง — audit log, resilience, race condition และอื่นๆ
+        <p>system design ฉบับสนามจริง ที่มีทั้งข้อจำกัด การเมือง และ deadline อยู่ในสมการ
            </p>
       </div>
-      <div class="card" style="--card-accent:var(--pink)">
+      <div class="card" style="--card-accent:var(--sage)">
         <span class="kind">กำลังจะมา</span>
-        <h3>จดหมายข่าว</h3>
-        <p>บทความใหม่ส่งตรงถึงอีเมลคุณ — เมื่อเว็บนี้พร้อม จะเปิดให้สมัครที่นี่ค่ะ
+        <h3>จดหมายจากวรรณชา</h3>
+        <p>ฉันจะเขียนถึงสิ่งที่ได้เรียนรู้ — จากระบบที่กำลังสร้าง จากคนที่ได้ทำงานด้วย และจากหนังสือที่กำลังอ่าน ไม่มีสแปม ไม่ขายของ มีแต่สิ่งที่อยากเล่าให้เพื่อนฟัง เปิดให้สมัครเร็วๆ นี้ค่ะ
            </p>
       </div>
     </div>
@@ -695,24 +713,19 @@
     <div class="about-text">
       <h2 style="margin-bottom:18px">เกี่ยวกับฉัน</h2>
       <p>ฉันทำงานในสาย Software Development มากว่า 20 ปี</p>
-      <p>เส้นทางการทำงานของฉันเริ่มจาก Programmer ก่อนจะเติบโตเป็น System Analyst,
-      Project Leader, Project Manager, Lead Business Analyst และปัจจุบันเป็น IT Platform Lead
-      ที่ Infinitas by Krungthai ซึ่งเป็น Tech Company (Speed Boat) ของธนาคารกรุงไทย
+      <p>เริ่มจาก Programmer แล้วเติบโตผ่าน System Analyst, Project Manager,
+      Lead Business Analyst จนปัจจุบันเป็น IT Platform Lead
+      ในบริษัทเทคโนโลยีของธนาคารแห่งหนึ่ง
       </p>
-      <p>ตลอดการทำงาน ฉันมีโอกาสริเริ่มและออกแบบ eKYC Platform และ
-      Customer Data Integration (CDI) Platform ตั้งแต่เป็นแนวคิดบนสไลด์เพียงหน้าเดียว
-      ผ่านการนำเสนอและ Pitching ในหลายเวที ก่อนนำทีมพัฒนาจนกลายเป็นระบบที่พร้อมใช้งานจริง
+      <p>ตลอดทางฉันมีโอกาสริเริ่มและออกแบบแพลตฟอร์มระดับประเทศ
+      ตั้งแต่มันยังเป็นแนวคิดบนสไลด์เพียงหน้าเดียว
+      ผ่านการนำเสนอหลายเวที จนกลายเป็นระบบที่ประชาชนใช้งานจริง
       </p>
-      <p>ปัจจุบัน ฉันดูแลแพลตฟอร์มหลัก ได้แก่ Insurance Platform, University Platform
-      และ Clix E2E Operation Portal
+      <p>นอกงานประจำ ฉันซื้อหนังสือ อ่านหนังสือ วิ่งตอนเช้า
+      และจดสิ่งที่เรียนรู้ไว้ที่นี่
       </p>
-      <p>ผลงานที่ฉันภูมิใจ คือ การได้มีโอกาสร่วมพัฒนาผลิตภัณฑ์ที่ช่วยให้เข้าถึงประชาชนอย่าง
-      ระบบซื้อพันธบัตรรัฐบาล และ ระบบกู้ยืมเงินเพื่อการศึกษา (กยศ.) บนแอปพลิเคชันเป๋าตัง
-      </p>
-      <p>นอกเหนือจากงานประจำ งานอดิเรกของฉันคือการซื้อหนังสือ อ่านหนังสือ
-      และพัฒนาตัวเอง
-      </p>
-      <p class="quiet">เว็บไซต์นี้คือบ้านถาวรของงานเขียนทั้งหมด
+      <p class="quiet"><em>เทคโนโลยีเปลี่ยนทุกวัน แต่คนกับระบบแทบไม่เคยเปลี่ยน —
+      และนั่นคือเหตุผลที่เว็บนี้มีอยู่</em>
       </p>
     </div>
   </div>
@@ -726,7 +739,7 @@
       <a href="https://www.threads.com/@kimwannachar?hl=th" target="_blank" rel="noopener">Threads</a>
       <a href="mailto:kimwannachar@gmail.com">Email</a>
     </div>
-    <span class="foot-note">© 2026 Kim Wannachar · อ่านให้ลึก เขียนให้เข้าใจ</span>
+    <span class="foot-note">อ่านให้ลึก เขียนให้เข้าใจ 🌿 · © Kim Wannachar · wannachar.com</span>
   </div>
 </footer>
 

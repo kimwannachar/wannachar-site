@@ -2,7 +2,7 @@
   "slug": "pci-dss",
   "title": "ว้าวุ่นไปกับ PCI DSS",
   "desc": "ด้วยงานที่เราสร้างช่วงนี้ คือ Customer Data Integration Platform (CDI) มันมีอันต้องให้ไปแตะไปต้อง card data และก็คือ audit เข้าจร้า",
-  "tag": "System Design",
+  "tag": "ระบบ",
   "swatch": "sys",
   "popular": false,
   "date_th": "ก.ย. 2023",

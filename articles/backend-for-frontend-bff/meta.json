@@ -2,7 +2,7 @@
   "slug": "backend-for-frontend-bff",
   "title": "Backend for Frontend (BFF)",
   "desc": "รู้จัก pattern BFF — ออกแบบ backend ให้พอดีกับหน้าบ้านแต่ละแบบ แทนที่จะใช้ตัวเดียวเหมาไปหมด",
-  "tag": "System Design",
+  "tag": "ระบบ",
   "swatch": "sys",
   "popular": true,
   "date_th": "ก.พ. 2024",

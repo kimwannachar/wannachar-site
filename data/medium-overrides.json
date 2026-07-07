@@ -1,47 +1,47 @@
 {
-  "_comment": "Keyed by the last URL path segment of the Medium post link (before the ?source= query string). Article titles and excerpts display in their original language (no translation). desc_th overrides the auto-generated excerpt; tag_th/tag_en label the category chip (UI, bilingual); swatch is sys|mind; popular adds the 👏 badge.",
+  "_comment": "Keyed by the last URL path segment of the Medium post link (before the ?source= query string). Article titles and excerpts display in their original language (no translation). desc_th overrides the auto-generated excerpt; tag_th/tag_en label the category chip (UI, bilingual); swatch is sys|mind|life (ระบบ|คน|ชีวิต); popular adds the 👏 badge.",
 
   "design-audit-log-ebfc854bc09e": {
     "desc_th": "มาออกแบบ audit log ตามระดับการใช้งานกันนะคะ",
-    "tag_th": "System Design",
-    "tag_en": "System Design",
+    "tag_th": "ระบบ",
+    "tag_en": "Systems",
     "swatch": "sys"
   },
   "frugal-ai-6c43455fa655": {
     "desc_th": "'ปัญญาประดิษฐ์แบบคุ้มค่า' — ใช้ AI อย่างไรให้คุ้มทั้งเงินและทรัพยากร",
-    "tag_th": "AI · Engineering",
-    "tag_en": "AI · Engineering",
+    "tag_th": "ระบบ",
+    "tag_en": "Systems",
     "swatch": "sys"
   },
   "belief-vs-behavior-how-9d9f6cab99bb": {
     "desc_th": "เมื่อความเชื่อขัดแย้งกับการกระทำ เราจัดการอย่างไร?",
-    "tag_th": "จิตวิทยา",
-    "tag_en": "Psychology",
+    "tag_th": "คน",
+    "tag_en": "People",
     "swatch": "mind"
   },
   "motivation-maslows-hierarchy-of-needs-62f71633eb52": {
     "desc_th": "แรงจูงใจ — ลำดับขั้นความต้องการของมาสโลว์",
-    "tag_th": "จิตวิทยา",
-    "tag_en": "Psychology",
+    "tag_th": "คน",
+    "tag_en": "People",
     "swatch": "mind"
   },
   "personality-in-8-rooms-8bfcea1e3900": {
     "desc_th": "8 ห้องแห่งบุคลิกภาพ: คุณอยู่ห้องไหนบ้างคะ?",
-    "tag_th": "จิตวิทยา",
-    "tag_en": "Psychology",
+    "tag_th": "คน",
+    "tag_en": "People",
     "swatch": "mind"
   },
   "resilient-system-design-e8703e2626d2": {
     "desc_th": "ออกแบบระบบให้ทำงานต่อได้ แม้ระบบต้นทางหรือปลายทางจะดับไป",
-    "tag_th": "System Design",
-    "tag_en": "System Design",
+    "tag_th": "ระบบ",
+    "tag_en": "Systems",
     "swatch": "sys"
   },
   "%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81-4-%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%99%E0%B9%83%E0%B8%88%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5-johari-window-bb36100e1905": {
     "slug": "johari-window",
     "desc_th": "เล่าเรื่องหน้าต่างโจฮารีให้เพื่อนฟัง แล้วเลยอยากเขียนเก็บไว้เป็นบทความ",
-    "tag_th": "จิตวิทยา",
-    "tag_en": "Psychology",
+    "tag_th": "คน",
+    "tag_en": "People",
     "swatch": "mind",
     "popular": true
   },
@@ -50,8 +50,8 @@
   },
   "protect-race-condition-1c1cbcbc22d0": {
     "desc_th": "ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ",
-    "tag_th": "System Design",
-    "tag_en": "System Design",
+    "tag_th": "ระบบ",
+    "tag_en": "Systems",
     "swatch": "sys",
     "popular": true
   }

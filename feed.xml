@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kim Wannachar — นักอ่านที่อยากเป็นนักเขียน</title>
+    <title>Kim Wannachar — คน ระบบ และสิ่งที่ไม่เคยเปลี่ยน</title>
     <link>https://www.wannachar.com/</link>
-    <description>บทความ system design จิตวิทยา และ leadership ภาษาไทย</description>
+    <description>บันทึกจากสองโลกของคนสร้างระบบมา 20 ปี — โลกของระบบ และโลกของคน</description>
     <language>th</language>
     <atom:link href="https://www.wannachar.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>

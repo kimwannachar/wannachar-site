@@ -2,7 +2,7 @@
   "slug": "kafka-pub-sub",
   "title": "อะไร Kafka อะไร Pub/Sub",
   "desc": "จากประสบการณ์ที่คลุกคลีตีโมงกับ Kafka เอย Pub/Sub เอย มาเป็นปีข้ามปี มีพี่ๆ เพื่อนๆ น้องๆ ที่ไม่ใช่เทคนิคอลมาถามกิมเรื่อยๆ เสมอๆ ว่า “อะไร คือ Kafka…",
-  "tag": "System Design",
+  "tag": "ระบบ",
   "swatch": "sys",
   "popular": false,
   "date_th": "มิ.ย. 2021",

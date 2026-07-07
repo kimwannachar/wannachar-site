@@ -40,21 +40,27 @@ COUNT_END = "<!-- ARTICLE-COUNT:END -->"
 TH_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
              "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."]
 
+# Three threads: ระบบ (systems/tech), คน (people/leadership/psychology),
+# ชีวิต (life/wellbeing/hobbies). Checked sys → life → คน; default คน.
 SYS_KEYWORDS = ["system-design", "system design", "backend", "engineering",
                 "architecture", "software", "frugal-ai", "frugal ai", "devops",
                 "database", "distributed", "kafka", "pub/sub", "pub sub",
                 "regression", "testing", "pci", "dss", "helm", "user story",
-                "race condition", "audit", "resilient", "api", "bff"]
-# "mind" thread: psychology, leadership, people, self-development, books
+                "race condition", "audit", "resilient", "api", "bff",
+                "prioritization", "prioritis", "prioritiz"]
+# "life" thread: wellbeing, hobbies, personal habits, lifestyle reflections
+LIFE_KEYWORDS = ["wine", "ไวน์", "sleep", "นอน", "run", "วิ่ง", "dopamine",
+                 "โดพามีน", "focus", "จดจ่อ", "bujo", "bullet journal",
+                 "disneyland", "habit", "นิสัย", "satir", "ซาเทียร์",
+                 "อาหารใจ", "อ่อนแอ", "trance", "ภวังค์", "read out loud",
+                 "5step", "gen alpha"]
+# "mind" thread: psychology, leadership, people, communication, self-development
 MIND_KEYWORDS = ["psycholog", "จิตวิทยา", "leadership", "leader", "coach",
                   "personality", "self", "maslow", "team", "johari", "motivation",
                   "behavior", "belief", "mind", "feedback", "นินทา", "empathy",
-                  "nvc", "satir", "กรุณา", "kindness", "lie", "harassment",
-                  "sleep", "นอน", "dopamine", "โดพามีน", "สติ", "mindful",
-                  "หนังสือ", "book", "review", "รีวิว", "reflect", "นิสัย",
-                  "habit", "bujo", "bullet journal", "disneyland", "facilitat",
-                  "capacity", "จดจ่อ", "focus", "อ่อนแอ", "อาหารใจ", "ชีวิต",
-                  "รับผิดชอบ", "impress", "leading change"]
+                  "nvc", "กรุณา", "kindness", "lie", "harassment", "สติ", "mindful",
+                  "หนังสือ", "book", "review", "รีวิว", "reflect", "facilitat",
+                  "capacity", "รับผิดชอบ", "impress", "leading change"]
 
 UA = {"User-Agent": "Mozilla/5.0"}
 
@@ -102,11 +108,13 @@ def excerpt_from_content(content_html: str, limit: int = 140) -> str:
 
 def classify(categories, title):
     hay = " ".join(categories + [title]).lower()
-    if any(k in hay for k in MIND_KEYWORDS):
-        return "mind", "จิตวิทยา · Leadership"
     if any(k in hay for k in SYS_KEYWORDS):
-        return "sys", "System Design"
-    return "sys", "บทความ"
+        return "sys", "ระบบ"
+    if any(k in hay for k in LIFE_KEYWORDS):
+        return "life", "ชีวิต"
+    if any(k in hay for k in MIND_KEYWORDS):
+        return "mind", "คน"
+    return "mind", "คน"
 
 
 def thai_date(pub_raw: str) -> str:
@@ -174,6 +182,7 @@ ARTICLE_CSS = """
   .a-tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
     color:var(--navy-soft)}
   .a-tag.mind{color:#B0728C}
+  .a-tag.life{color:#4F7A5E}
   h1{font-family:'Trirong',serif;font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.55;
     font-weight:400;color:var(--navy-deep);margin:12px 0 14px}
   .a-meta{font-family:'Trirong',serif;font-style:italic;font-size:.9rem;color:var(--navy-soft)}
@@ -212,7 +221,7 @@ def render_article_page(meta, content_html):
     esc_attr = lambda s: html.escape(s, quote=True)
     og_image = (f"{SITE}/articles/{meta['slug']}/{meta['image']}"
                 if meta.get("image") else f"{SITE}/kim-avatar.png")
-    tag_class = "a-tag mind" if meta["swatch"] == "mind" else "a-tag"
+    tag_class = {"mind": "a-tag mind", "life": "a-tag life"}.get(meta["swatch"], "a-tag")
     return f'''<!DOCTYPE html>
 <html lang="th">
 <head>
@@ -303,9 +312,9 @@ def build_feed():
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kim Wannachar — นักอ่านที่อยากเป็นนักเขียน</title>
+    <title>Kim Wannachar — คน ระบบ และสิ่งที่ไม่เคยเปลี่ยน</title>
     <link>{SITE}/</link>
-    <description>บทความ system design จิตวิทยา และ leadership ภาษาไทย</description>
+    <description>บันทึกจากสองโลกของคนสร้างระบบมา 20 ปี — โลกของระบบ และโลกของคน</description>
     <language>th</language>
     <atom:link href="{SITE}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}

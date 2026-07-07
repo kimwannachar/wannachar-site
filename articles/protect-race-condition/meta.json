@@ -2,7 +2,7 @@
   "slug": "protect-race-condition",
   "title": "protect ‘race condition’",
   "desc": "ออกแบบระบบไม่ให้เกิด race condition ก่อนไปเจอบน production กันค่ะ",
-  "tag": "System Design",
+  "tag": "ระบบ",
   "swatch": "sys",
   "popular": true,
   "date_th": "ก.พ. 2025",
