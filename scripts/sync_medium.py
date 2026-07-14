@@ -27,15 +27,23 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
 ARTICLES_DIR = ROOT / "articles"
+ARTICLES_INDEX = ARTICLES_DIR / "index.html"
 FEED_PATH = ROOT / "feed.xml"
 OVERRIDES_PATH = ROOT / "data" / "medium-overrides.json"
 
 SITE = "https://www.wannachar.com"
 FEED_URL = "https://medium.com/feed/@kimwannachar."
+# How many of the newest articles the homepage teases before linking on
+# to the full /articles/ index.
+HOME_LATEST = 6
 START_MARKER = "<!-- MEDIUM-ARTICLES:START -->"
 END_MARKER = "<!-- MEDIUM-ARTICLES:END -->"
 COUNT_START = "<!-- ARTICLE-COUNT:START -->"
 COUNT_END = "<!-- ARTICLE-COUNT:END -->"
+IDX_START_MARKER = "<!-- ARTICLES-INDEX:START -->"
+IDX_END_MARKER = "<!-- ARTICLES-INDEX:END -->"
+IDX_COUNT_START = "<!-- INDEX-COUNT:START -->"
+IDX_COUNT_END = "<!-- INDEX-COUNT:END -->"
 
 TH_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
              "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."]
@@ -248,7 +256,7 @@ def render_article_page(meta, content_html):
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="/">Kim <span>Wannachar</span></a>
-    <a class="back" href="/#articles">← บทความทั้งหมด</a>
+    <a class="back" href="/articles/">← บทความทั้งหมด</a>
   </div>
 </nav>
 
@@ -292,6 +300,46 @@ def render_card(meta):
       </div>
       <span class="meta">{meta["date_th"]}</span>
     </article>'''
+
+
+def render_row(meta):
+    """One compact line for the full /articles/ index: colour dot, title, date."""
+    esc = lambda s: html.escape(s, quote=False)
+    pop_html = ' <span class="idx-pop" title="ยอดนิยม">👏</span>' if meta.get("popular") else ''
+    return f'''    <div class="idx-row">
+      <span class="idx-dot dot-{meta["swatch"]}" aria-hidden="true"></span>
+      <a href="/articles/{meta["slug"]}/">{esc(meta["title"])}{pop_html}</a>
+      <span class="idx-date">{meta["date_th"]}</span>
+    </div>'''
+
+
+def write_indexes(all_metas):
+    """Rewrite the homepage teaser (latest N) and the full /articles/ index."""
+    total = len(all_metas)
+
+    # Homepage: only the newest HOME_LATEST cards, then a link to the full list.
+    html_text = INDEX.read_text(encoding="utf-8")
+    if START_MARKER not in html_text or END_MARKER not in html_text:
+        print("Markers not found in index.html", file=sys.stderr)
+        sys.exit(1)
+    home_section = "\n\n".join(render_card(m) for m in all_metas[:HOME_LATEST])
+    pattern = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.S)
+    html_text = pattern.sub(f"{START_MARKER}\n{home_section}\n    {END_MARKER}", html_text)
+    count_pattern = re.compile(re.escape(COUNT_START) + r".*?" + re.escape(COUNT_END), re.S)
+    html_text = count_pattern.sub(f"{COUNT_START}{total}{COUNT_END}", html_text)
+    INDEX.write_text(html_text, encoding="utf-8")
+
+    # /articles/ : every article, newest first, as compact rows.
+    idx_text = ARTICLES_INDEX.read_text(encoding="utf-8")
+    if IDX_START_MARKER not in idx_text or IDX_END_MARKER not in idx_text:
+        print("Markers not found in articles/index.html", file=sys.stderr)
+        sys.exit(1)
+    idx_section = "\n".join(render_row(m) for m in all_metas)
+    idx_pattern = re.compile(re.escape(IDX_START_MARKER) + r".*?" + re.escape(IDX_END_MARKER), re.S)
+    idx_text = idx_pattern.sub(f"{IDX_START_MARKER}\n{idx_section}\n    {IDX_END_MARKER}", idx_text)
+    idx_count_pattern = re.compile(re.escape(IDX_COUNT_START) + r".*?" + re.escape(IDX_COUNT_END), re.S)
+    idx_text = idx_count_pattern.sub(f"{IDX_COUNT_START}{total}{IDX_COUNT_END}", idx_text)
+    ARTICLES_INDEX.write_text(idx_text, encoding="utf-8")
 
 
 def build_feed():
@@ -376,28 +424,16 @@ def main():
 
     fresh = [process_item(item, overrides) for item in items]
 
-    # The homepage is a showroom of EVERY article — feed items plus any
-    # manually imported ones — sorted newest first.
+    # Collect EVERY article — feed items plus any manually imported ones —
+    # sorted newest first, then rebuild both index views from them.
     all_metas = [json.loads(f.read_text(encoding="utf-8"))
                  for f in ARTICLES_DIR.glob("*/meta.json")]
     all_metas.sort(key=lambda m: m["pub_iso"], reverse=True)
 
-    html_text = INDEX.read_text(encoding="utf-8")
-    if START_MARKER not in html_text or END_MARKER not in html_text:
-        print("Markers not found in index.html", file=sys.stderr)
-        sys.exit(1)
-    new_section = "\n\n".join(render_card(m) for m in all_metas)
-    pattern = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.S)
-    html_text = pattern.sub(
-        f"{START_MARKER}\n{new_section}\n    {END_MARKER}", html_text)
-    count_pattern = re.compile(re.escape(COUNT_START) + r".*?" + re.escape(COUNT_END), re.S)
-    html_text = count_pattern.sub(
-        f"{COUNT_START}ทั้งหมด {len(all_metas)} บทความ{COUNT_END}", html_text)
-    INDEX.write_text(html_text, encoding="utf-8")
-
+    write_indexes(all_metas)
     total = build_feed()
-    print(f"Refreshed {len(fresh)} pages from the feed; homepage and "
-          f"feed.xml now list {total} articles.")
+    print(f"Refreshed {len(fresh)} pages from the feed; homepage teases the "
+          f"latest {min(HOME_LATEST, total)}, /articles/ and feed.xml list {total}.")
 
 
 if __name__ == "__main__":
