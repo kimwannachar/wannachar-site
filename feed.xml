@@ -7,6 +7,13 @@
     <language>th</language>
     <atom:link href="https://www.wannachar.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title><![CDATA[“ทำไมไม่เชื่อ Kafka ไปเลย?”]]></title>
+      <link>https://www.wannachar.com/articles/kafka/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/kafka/</guid>
+      <description><![CDATA[บรรยากาศการประชุมค่อนไปทางอึดอัดนิดๆ หลังจากทีมฉันแจ้งทีมอื่นๆ ไปว่า เราต้องทำการ reconcile data เพื่อให้ได้มาซึ่ง ความน่าเชื่อถือของข้อมูล…]]></description>
+      <pubDate>Fri, 31 Jul 2026 17:00:52 +0000</pubDate>
+    </item>
+    <item>
       <title><![CDATA[System Design — Audit Log]]></title>
       <link>https://www.wannachar.com/articles/design-audit-log/</link>
       <guid isPermaLink="true">https://www.wannachar.com/articles/design-audit-log/</guid>
