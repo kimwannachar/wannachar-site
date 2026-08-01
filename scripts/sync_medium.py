@@ -411,6 +411,22 @@ def process_item(item, overrides):
     return meta
 
 
+def is_response(item, overrides) -> bool:
+    """Medium's RSS feed mixes the author's *responses* (comments left on
+    other people's posts) in with real articles.  Real posts carry the
+    author's tags as <category> elements; responses never have any — so
+    an item without categories is treated as a response and skipped.
+
+    Caveat: an article published on Medium with no tags at all would be
+    skipped too.  To rescue one, tag it on Medium, or add
+    "force_include": true under its Medium slug in
+    data/medium-overrides.json."""
+    if item["categories"]:
+        return False
+    override = overrides.get(medium_slug(item["link"]))
+    return not (override and override.get("force_include"))
+
+
 def main():
     xml_text = fetch(FEED_URL).decode("utf-8")
     items = parse_items(xml_text)
@@ -422,7 +438,18 @@ def main():
     if OVERRIDES_PATH.exists():
         overrides = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
 
-    fresh = [process_item(item, overrides) for item in items]
+    posts = []
+    for item in items:
+        if is_response(item, overrides):
+            print(f"  skip response (no tags): {item['title'][:60]}",
+                  file=sys.stderr)
+            continue
+        posts.append(item)
+    if not posts:
+        print("Feed contained only responses; nothing changed.", file=sys.stderr)
+        sys.exit(1)
+
+    fresh = [process_item(item, overrides) for item in posts]
 
     # Collect EVERY article — feed items plus any manually imported ones —
     # sorted newest first, then rebuild both index views from them.

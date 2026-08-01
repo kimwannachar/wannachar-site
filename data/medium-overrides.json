@@ -17,7 +17,8 @@
     "desc_th": "เมื่อความเชื่อขัดแย้งกับการกระทำ เราจัดการอย่างไร?",
     "tag_th": "คน",
     "tag_en": "People",
-    "swatch": "mind"
+    "swatch": "mind",
+    "force_include": true
   },
   "motivation-maslows-hierarchy-of-needs-62f71633eb52": {
     "desc_th": "แรงจูงใจ — ลำดับขั้นความต้องการของมาสโลว์",

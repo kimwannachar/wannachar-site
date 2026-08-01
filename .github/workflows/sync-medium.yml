@@ -2,8 +2,12 @@ name: Sync Medium articles
 
 on:
   schedule:
-    # 01:00 UTC = 08:00 Bangkok time, daily
-    - cron: "0 1 * * *"
+    # GitHub's cron is best-effort and delays on-the-hour jobs the most,
+    # so schedule at an odd minute. Two runs a day: 00:37 UTC (07:37
+    # Bangkok) and 12:37 UTC (19:37 Bangkok) so evening posts appear the
+    # same night instead of waiting for the next morning.
+    - cron: "37 0 * * *"
+    - cron: "37 12 * * *"
   workflow_dispatch: {}
 
 permissions:
