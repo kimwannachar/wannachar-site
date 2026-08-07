@@ -61,6 +61,7 @@
     "tag_th": "คน",
     "tag_en": "People",
     "swatch": "mind",
+    "site_first": true,
     "force_include": true
   }
 }

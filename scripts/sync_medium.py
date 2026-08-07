@@ -230,6 +230,17 @@ def render_article_page(meta, content_html):
     og_image = (f"{SITE}/articles/{meta['slug']}/{meta['image']}"
                 if meta.get("image") else f"{SITE}/kim-avatar.png")
     tag_class = {"mind": "a-tag mind", "life": "a-tag life"}.get(meta["swatch"], "a-tag")
+    # Medium-sourced articles credit Medium as the first home; site-first
+    # articles (published on wannachar.com first) just offer Medium as a
+    # place to also read the piece. No medium_url → no footer link.
+    if meta.get("medium_url"):
+        foot_label = ("อ่านบน" if meta.get("site_first")
+                      else "บทความนี้เผยแพร่ครั้งแรกบน")
+        foot_html = f'''    <div class="a-foot">
+      {foot_label} <a href="{esc_attr(meta["medium_url"])}" target="_blank" rel="noopener">Medium</a>
+    </div>'''
+    else:
+        foot_html = ""
     return f'''<!DOCTYPE html>
 <html lang="th">
 <head>
@@ -270,9 +281,7 @@ def render_article_page(meta, content_html):
     <div class="content">
 {content_html}
     </div>
-    <div class="a-foot">
-      บทความนี้เผยแพร่ครั้งแรกบน <a href="{esc_attr(meta["medium_url"])}" target="_blank" rel="noopener">Medium</a>
-    </div>
+{foot_html}
   </article>
 </main>
 
@@ -402,6 +411,7 @@ def process_item(item, overrides):
         "pub_raw": item["pub_raw"],
         "pub_iso": dt.isoformat(),
         "medium_url": item["link"],
+        "site_first": bool(override and override.get("site_first")),
         "image": first_img.group(1) if first_img else None,
     }
     (article_dir / "meta.json").write_text(
