@@ -1,6 +1,5 @@
 {
   "_comment": "Keyed by the last URL path segment of the Medium post link (before the ?source= query string). Article titles and excerpts display in their original language (no translation). desc_th overrides the auto-generated excerpt; tag_th/tag_en label the category chip (UI, bilingual); swatch is sys|mind|life (ระบบ|คน|ชีวิต); popular adds the 👏 badge.",
-
   "design-audit-log-ebfc854bc09e": {
     "desc_th": "มาออกแบบ audit log ตามระดับการใช้งานกันนะคะ",
     "tag_th": "ระบบ",
@@ -55,5 +54,13 @@
     "tag_en": "Systems",
     "swatch": "sys",
     "popular": true
+  },
+  "%E0%B9%80%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3-1-1-%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1-9c802e4fb7d4": {
+    "slug": "one-on-one-goal",
+    "desc_th": "เมื่อฉันเปลี่ยนเป้าหมายของ 1:1 จาก 'จะ feedback อย่างไรไม่ให้กระทบใจ' เป็น 'ฉันจะเพิ่มคุณค่าให้น้องคนนี้ได้อย่างไร' บรรยากาศทั้งหมดก็เปลี่ยนไป",
+    "tag_th": "คน",
+    "tag_en": "People",
+    "swatch": "mind",
+    "force_include": true
   }
 }

@@ -7,6 +7,13 @@
     <language>th</language>
     <atom:link href="https://www.wannachar.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title><![CDATA[เป้าหมายในการ 1:1 กับน้องในทีม]]></title>
+      <link>https://www.wannachar.com/articles/one-on-one-goal/</link>
+      <guid isPermaLink="true">https://www.wannachar.com/articles/one-on-one-goal/</guid>
+      <description><![CDATA[เมื่อฉันเปลี่ยนเป้าหมายของ 1:1 จาก 'จะ feedback อย่างไรไม่ให้กระทบใจ' เป็น 'ฉันจะเพิ่มคุณค่าให้น้องคนนี้ได้อย่างไร' บรรยากาศทั้งหมดก็เปลี่ยนไป]]></description>
+      <pubDate>Sat, 08 Aug 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title><![CDATA[“ทำไมไม่เชื่อ Kafka ไปเลย?”]]></title>
       <link>https://www.wannachar.com/articles/kafka/</link>
       <guid isPermaLink="true">https://www.wannachar.com/articles/kafka/</guid>
