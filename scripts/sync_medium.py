@@ -217,11 +217,21 @@ ARTICLE_CSS = """
   .a-foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
     font-size:.88rem;color:var(--navy-soft)}
   .a-foot a{color:var(--navy-deep)}
+  .a-journal{display:flex;gap:14px;align-items:flex-start;margin-top:48px;padding:22px 24px;border:1px solid var(--line);background:#fff;font-size:.95rem;color:var(--navy-soft);line-height:1.75}
+  .a-journal-mark{color:#B8955A;letter-spacing:.3em;white-space:nowrap;padding-top:2px}
+  .a-journal b{color:var(--navy-deep);font-weight:500}
+  .a-journal a{color:var(--navy-deep);text-decoration:underline;text-decoration-color:#B8955A;text-underline-offset:3px}
   footer{border-top:1px solid var(--line);padding:36px 0;background:var(--navy-deep);color:#EFE6EA}
   .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
   .foot-inner a{color:#EFE6EA;text-decoration:none}
   .foot-inner a:hover{text-decoration:underline;color:var(--pink)}
 """
+
+
+JOURNAL_PROMO = '''    <aside class="a-journal">
+      <span class="a-journal-mark">☼ ☾</span>
+      <div><b>Morning &amp; Night</b> — สมุดบันทึกวันละสองบรรทัด ที่ฉันทำขึ้นเพื่อให้คุณเห็น ‘คุณ’ ชัดขึ้น <a href="/journal/">ดูข้างในเล่ม →</a></div>
+    </aside>'''
 
 
 def render_article_page(meta, content_html):
@@ -241,6 +251,8 @@ def render_article_page(meta, content_html):
     </div>'''
     else:
         foot_html = ""
+    # Morning & Night journal — only under คน/ชีวิต pieces, where it belongs.
+    promo_html = JOURNAL_PROMO if meta["swatch"] in ("mind", "life") else ""
     return f'''<!DOCTYPE html>
 <html lang="th">
 <head>
@@ -282,6 +294,7 @@ def render_article_page(meta, content_html):
 {content_html}
     </div>
 {foot_html}
+{promo_html}
   </article>
 </main>
 

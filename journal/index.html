@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning &amp; Night — สมุดบันทึกวันละสองบรรทัด | เปิดจองล็อตแรก</title>
+<meta name="description" content="Morning & Night สมุดบันทึกเช้า–ก่อนนอน วันละสองบรรทัด ใช้ได้ 1 ปี ไม่ระบุวันที่ ปกหนัง PU สีกรมท่า ขนาด 14.5 × 21 ซม. 160 หน้า เปิดจองล็อตแรก 100 เล่ม 550 บาท">
+<meta property="og:title" content="Morning & Night — สมุดบันทึกวันละสองบรรทัด">
+<meta property="og:description" content="เล่มนี้ออกแบบมาเพื่อให้คุณเห็น 'คุณ' ชัดขึ้น — เปิดจองล็อตแรก 100 เล่ม">
+<meta property="og:image" content="https://www.wannachar.com/journal/og.png">
+<meta property="og:url" content="https://www.wannachar.com/journal/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<link rel="canonical" href="https://www.wannachar.com/journal/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- ฟอนต์: Trirong ใช้กับหัวเรื่อง, Sarabun ใช้กับเนื้อความ — ฟอนต์เดียวกับในเล่ม (ตั้งใจให้หน้านี้ตามเล่ม ไม่ตามเว็บหลักที่ใช้ Anuphan) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:wght@400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== ตัวแปรที่แก้ได้ ===== */
+:root{
+  --navy:#1F2A44;
+  --navy-soft:#3A4763;
+  --gold:#B8955A;
+  --cream:#F7F3EA;
+  --cream-deep:#EFE9DC;
+  --line:#D9DEE7;
+  --ink:#2A2F3A;
+  --muted:#6B7280;
+  --white:#FFFFFF;
+  --font-head:'Trirong', 'Sarabun', serif;
+  --font-body:'Sarabun', -apple-system, 'Noto Sans Thai', sans-serif;
+  --max:720px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-body);font-weight:300;font-size:17px;line-height:1.85}
+h1,h2,h3{font-family:var(--font-head);font-weight:500;color:var(--navy);line-height:1.35;margin:0 0 .5em}
+h1{font-size:2.4rem}
+h2{font-size:1.55rem;margin-top:0}
+h3{font-size:1.15rem}
+p{margin:0 0 1em}
+a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
+small,.muted{color:var(--muted)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+
+/* ===== site nav (เชื่อมกับเว็บหลัก) ===== */
+.sitenav{background:var(--navy);color:var(--cream);font-size:.9rem}
+.sitenav .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;border-bottom:1px solid rgba(247,243,234,.12)}
+.sitenav a{color:var(--cream);text-decoration:none}
+.sitenav .logo{font-family:var(--font-head);letter-spacing:.06em;font-size:1rem}
+.sitenav .logo span{color:var(--gold)}
+.sitenav .back{opacity:.8}
+.sitenav .back:hover{opacity:1}
+
+/* ===== hero ===== */
+.hero{background:var(--navy);color:var(--cream);padding:64px 0 64px;border-bottom:0}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{color:var(--cream);font-size:clamp(2rem,6vw,3rem)}
+.hero .tag{font-family:var(--font-head);font-size:1.25rem;color:var(--cream);opacity:.92;margin-bottom:28px}
+.price-row{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-end;margin:26px 0 30px;padding-top:22px;border-top:1px solid rgba(247,243,234,.18)}
+.price-row .big{font-family:var(--font-head);font-size:2.2rem;color:var(--cream);line-height:1}
+.price-row .lbl{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.price-row .sub{font-size:.95rem;opacity:.8}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:500;padding:14px 26px;border-radius:4px;text-decoration:none;font-size:1rem;letter-spacing:.02em}
+.btn:hover{filter:brightness(1.06)}
+.btn-ghost{display:inline-block;color:var(--cream);border:1px solid rgba(247,243,234,.4);padding:13px 22px;border-radius:4px;text-decoration:none;margin-left:12px;font-size:1rem}
+@media (max-width:480px){.btn-ghost{margin-left:0;margin-top:12px}}
+
+/* ===== cover mock — ปกจริงเป็นสกรีนสีขาวบน PU กรมท่า (ไม่ใช่สีทอง) ===== */
+.cover{width:170px;height:240px;background:linear-gradient(160deg,#243152,#1a2440);border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(0,0,0,.35);margin:0 0 34px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;border-left:6px solid #16203a}
+.cover .mark{font-size:1.5rem;color:var(--cream);letter-spacing:.35em}
+.cover .name{font-family:var(--font-head);font-size:.55rem;letter-spacing:.18em;color:var(--cream);margin-top:10px;text-transform:uppercase;padding:0 14px 0 8px;text-align:center}
+.cover .strap{position:absolute;right:16px;top:0;bottom:0;width:8px;background:#11192c;border-radius:2px}
+.cover-note{font-size:.85rem;opacity:.7;margin-top:-22px;margin-bottom:30px}
+
+/* ===== two lines demo ===== */
+.demo{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px 26px 18px;margin:22px 0 8px}
+.demo .day{font-size:.8rem;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.demo .q{font-family:var(--font-head);color:var(--navy);font-size:1.05rem;margin-bottom:2px}
+.demo .q small{display:block;font-family:var(--font-body);font-size:.8rem;color:var(--muted)}
+.demo .ln{border-bottom:1px dashed #C9D0DC;height:32px;margin-bottom:18px}
+
+/* ===== page previews (จากไฟล์พิมพ์จริง) ===== */
+.pages{margin-top:36px}
+.pages figure{margin:0 0 28px}
+.pages img{width:100%;height:auto;display:block;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 30px rgba(31,42,68,.08)}
+.pages figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
+.pages-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+@media (max-width:560px){.pages-grid{grid-template-columns:1fr}}
+
+/* ===== specs ===== */
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:18px}
+.specs div{border-top:1px solid var(--line);padding-top:10px}
+.specs b{display:block;font-weight:500;color:var(--navy);font-size:.95rem}
+.specs span{font-size:.95rem}
+@media (max-width:520px){.specs{grid-template-columns:1fr}}
+
+/* ===== steps ===== */
+.steps{counter-reset:s;list-style:none;padding:0;margin:26px 0 0}
+.steps li{position:relative;padding-left:58px;margin-bottom:30px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--cream);font-family:var(--font-head);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.steps h3{margin-bottom:6px}
+.steps p{margin-bottom:.4em}
+
+/* ===== pay ===== */
+.pay{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px}
+.pay.no-qr{grid-template-columns:1fr}
+.qr{width:200px;height:200px;background:var(--cream-deep);border:1px dashed #C9D0DC;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:var(--muted);padding:12px}
+.qr img{width:100%;height:100%;object-fit:contain}
+.pay dl{margin:0}
+.pay dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+.pay dd{margin:0 0 6px;font-weight:400;color:var(--navy)}
+.pay dd.total{font-family:var(--font-head);font-size:1.5rem}
+@media (max-width:560px){.pay{grid-template-columns:1fr}.qr{margin:0 auto}}
+
+/* ===== form ===== */
+.formbox{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:8px;margin-top:22px}
+.formbox iframe{width:100%;height:1100px;border:0;display:block}
+.form-fallback{padding:22px 18px;text-align:center}
+.soon{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin-top:22px;font-size:.98rem}
+
+/* ===== table ===== */
+table{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:12px}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--navy);font-size:.85rem;letter-spacing:.06em}
+td.r,th.r{text-align:right;white-space:nowrap}
+
+/* ===== faq ===== */
+details{border-top:1px solid var(--line);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::after{content:'+';color:var(--gold);font-family:var(--font-head);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:'–'}
+details p{margin:10px 0 0;font-size:.98rem}
+
+/* ===== footer ===== */
+footer{background:var(--navy);color:var(--cream);padding:48px 0;font-size:.92rem}
+footer .mark{color:var(--gold);letter-spacing:.4em;font-size:1.3rem;margin-bottom:12px}
+footer a{color:var(--cream);text-decoration-color:var(--gold)}
+.line-btn{display:inline-block;background:#06C755;color:#fff;padding:12px 22px;border-radius:4px;text-decoration:none;font-weight:500}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy);color:var(--cream);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.18);z-index:9;font-size:.95rem}
+.sticky .btn{padding:10px 18px;font-size:.92rem}
+@media (min-width:900px){.sticky{display:none}}
+@media (max-width:899px){body{padding-bottom:64px}}
+
+/* ส่วนที่ยังไม่มีค่าจริง (QR / ฟอร์ม / LINE) — เอา class นี้ออกเมื่อใส่ค่าแล้ว */
+.pending{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="sitenav">
+  <div class="wrap">
+    <a class="logo" href="/">Kim <span>Wannachar</span></a>
+    <a class="back" href="/">← หน้าแรก</a>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <!-- TODO: แทนที่ด้วยรูปเล่มจริงจากโรงพิมพ์ แล้วลบ .cover-note -->
+    <div class="cover" aria-hidden="true">
+      <div class="mark">☼ ☾</div>
+      <div class="name">Morning &amp; Night</div>
+      <div class="strap"></div>
+    </div>
+    <p class="cover-note">ภาพจำลอง — รูปเล่มจริงจะมาแทนที่เมื่อได้ตัวอย่างจากโรงพิมพ์</p>
+
+    <div class="eyebrow">เปิดจองล็อตแรก · 100 เล่ม</div>
+    <h1>Morning &amp; Night</h1>
+    <p class="tag">สมุดบันทึกวันละสองบรรทัด<br>เล่มนี้ออกแบบมาเพื่อให้คุณเห็น ‘คุณ’ ชัดขึ้น</p>
+
+    <div class="price-row">
+      <div>
+        <div class="lbl">ราคา</div>
+        <div class="big">550 <span style="font-size:1rem">บาท</span></div>
+      </div>
+      <div>
+        <div class="lbl">รับจองถึง</div>
+        <div class="sub">15 พฤศจิกายน 2569</div>
+      </div>
+      <div>
+        <div class="lbl">ส่งของ</div>
+        <div class="sub">ภายในต้นเดือนธันวาคม 2569</div>
+      </div>
+    </div>
+
+    <a class="btn" href="#order">แบบฟอร์มจอง</a>
+    <a class="btn-ghost" href="#inside">ดูข้างในเล่มก่อน</a>
+  </div>
+</header>
+
+<!-- ===================== INSIDE ===================== -->
+<section id="inside">
+  <div class="wrap">
+    <div class="eyebrow">ข้างในเล่ม</div>
+    <h2>เช้าหนึ่งบรรทัด คืนหนึ่งบรรทัด</h2>
+    <p>ทั้งเล่มมีคำถามหลักอยู่สองข้อ ข้อหนึ่งสำหรับตอนเช้า อีกข้อสำหรับก่อนนอน แต่ละข้อมีที่ให้เขียนแค่บรรทัดเดียว ไม่มีหน้าไหนที่ต้องเขียนยาว และไม่มีวันที่พิมพ์ไว้ล่วงหน้า วันไหนว่างไป หน้าถัดไปก็ยังรออยู่เหมือนเดิม</p>
+    <p>หนึ่งปีของคุณในเล่มนี้คือ 52 สัปดาห์ · 7 วัน · 2 บรรทัด — รวม 728 บรรทัดที่เป็นคุณ</p>
+
+    <div class="demo" aria-label="ตัวอย่างหนึ่งวันในเล่ม">
+      <div class="day">Monday · วันที่ ______</div>
+      <div class="q">☼ วันนี้ฉันเลือกเป็นตัวเองแบบไหน <small>Who do I choose to be today?</small></div>
+      <div class="ln"></div>
+      <div class="q">☾ ก่อนนอน ฉันอยากวาง หรือเก็บอะไร <small>Before bed, what do I want to lay down — or keep?</small></div>
+      <div class="ln"></div>
+    </div>
+    <p class="muted" style="font-size:.9rem">หนึ่งสัปดาห์คือหนึ่งหน้าคู่ จันทร์–พฤหัสฯ อยู่ซ้าย ศุกร์–อาทิตย์อยู่ขวา และท้ายสัปดาห์มีที่ให้หนึ่งคำแทนสัปดาห์นั้น</p>
+
+    <div class="pages">
+      <figure>
+        <img src="/journal/spread-week.png" alt="หน้าคู่หนึ่งสัปดาห์ในเล่ม Morning &amp; Night — ซ้ายจันทร์ถึงพฤหัสบดี ขวาศุกร์ถึงอาทิตย์ แต่ละวันมีบรรทัด Morning และ Night" width="1258" height="910" loading="lazy">
+        <figcaption>หน้าคู่หนึ่งสัปดาห์ จากไฟล์พิมพ์จริง (เนื้อในพิมพ์ขาวดำ ตัวหนังสือสีเทาเข้ม)</figcaption>
+      </figure>
+      <div class="pages-grid">
+        <figure>
+          <img src="/journal/page-how-it-works.png" alt="หน้า How it works อธิบายส่วนต่าง ๆ ของเล่ม" width="628" height="910" loading="lazy">
+          <figcaption>How it works — แผนที่ของเล่มในหน้าเดียว</figcaption>
+        </figure>
+        <figure>
+          <img src="/journal/page-before-you-begin.png" alt="หน้า Before you begin — ฉันในวันก่อนเริ่มต้น" width="628" height="910" loading="lazy">
+          <figcaption>Before you begin — ฉันในวันก่อนเริ่มต้น</figcaption>
+        </figure>
+        <figure>
+          <img src="/journal/page-monthly-reflection.png" alt="หน้า Monthly Reflection สามคำถามท้ายเดือน" width="628" height="910" loading="lazy">
+          <figcaption>Monthly Reflection — สามคำถามท้ายเดือน</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px">นอกจาก 52 สัปดาห์ ยังมี</h3>
+    <p>หน้า “ฉันในวันก่อนเริ่มต้น” ก่อนสัปดาห์แรก · หน้า “มองย้อน” และ “หนึ่งเดือนผ่านไป” ทุกสิ้นเดือน · หน้าเช็กอินทุกไตรมาส · หน้า “คำถามที่ใกล้ความคิดคุณ” สำหรับวันที่คำไม่มา · “หนึ่งปีใน 52 คำ” · “สิ่งที่วางได้และเก็บไว้” · “ฉันในวันครบหนึ่งปี” · และจดหมายถึงตัวเองในปีหน้า ที่หน้าสุดท้าย</p>
+
+    <div class="specs">
+      <div><b>ขนาด</b><span>14.5 × 21 ซม. · 160 หน้า</span></div>
+      <div><b>ปก</b><span>หนัง PU สีกรมท่า สกรีนโลโก้สีขาว มุมมน มีสายรัด</span></div>
+      <div><b>กระดาษ</b><span>กระดาษถนอมสายตา 75 แกรม</span></div>
+      <div><b>เข้าเล่ม</b><span>เย็บกี่ กางได้ราบ มีริบบิ้นคั่นหน้า</span></div>
+      <div><b>ภาษา</b><span>คำถามภาษาไทย มีอังกฤษกำกับตัวเล็ก</span></div>
+      <div><b>บรรจุ</b><span>กล่องกระดาษ 1 เล่มต่อ 1 กล่อง</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW TO ORDER ===================== -->
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">การจอง</div>
+    <h2>สามขั้น ใช้เวลาไม่ถึงห้านาที</h2>
+    <ol class="steps">
+      <li>
+        <h3>แบบฟอร์มจอง</h3>
+        <p>ชื่อ ที่อยู่จัดส่ง จำนวนเล่ม และเบอร์ที่ติดต่อได้ อยู่ในแบบฟอร์มด้านล่าง เมื่อส่งแล้วจะมีอีเมลยืนยันพร้อมยอดที่ต้องโอน</p>
+      </li>
+      <li>
+        <h3>โอนเงินผ่าน PromptPay</h3>
+        <p>ยอดคือ 550 บาทต่อเล่ม บวกค่าส่ง 50 บาทต่อออร์เดอร์ (รับเองไม่มีค่าส่ง) <span class="pending">QR อยู่ในหัวข้อถัดไป</span></p>
+      </li>
+      <li>
+        <h3>ส่งสลิปทาง LINE</h3>
+        <p>สลิปพร้อมชื่อที่กรอกไว้ ส่งมาที่ LINE ของ Morning &amp; Night การจองจะยืนยันภายใน 24 ชั่วโมง และเมื่อของส่งออก จะมีเลขพัสดุส่งกลับไปทางเดียวกัน</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== PAYMENT ===================== -->
+<section id="pay">
+  <div class="wrap">
+    <div class="eyebrow">การชำระเงิน</div>
+    <h2>PromptPay</h2>
+    <!-- TODO: เมื่อได้ QR แล้ว — ลบ class "no-qr" และ "pending" ในบล็อกนี้ แล้วใส่ <img src="/journal/promptpay.png" alt="QR PromptPay"> ใน .qr -->
+    <div class="pay no-qr">
+      <div class="qr pending">
+        ตำแหน่ง QR PromptPay<br>(รูปจากแอปธนาคาร หรือ QR ที่สร้างไว้)
+      </div>
+      <dl>
+        <dt class="pending">ชื่อบัญชี</dt>
+        <dd class="pending">TODO: ชื่อ–นามสกุล ตามที่ปรากฏตอนสแกน</dd>
+        <dt>ราคาต่อเล่ม</dt>
+        <dd>550 บาท</dd>
+        <dt>ค่าส่ง</dt>
+        <dd>50 บาทต่อออร์เดอร์ (Flash / ไปรษณีย์) · รับเองที่นัดหมาย ไม่มีค่าส่ง</dd>
+        <dt>ยอดที่พบบ่อย</dt>
+        <dd class="total">1 เล่ม = 600 บาท · 2 เล่ม = 1,150 บาท</dd>
+        <dd class="muted" style="font-size:.9rem">ยอดตรงตามอีเมลยืนยันที่ได้รับหลังกรอกแบบฟอร์ม</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ORDER FORM ===================== -->
+<section id="order">
+  <div class="wrap">
+    <div class="eyebrow">แบบฟอร์มจอง</div>
+    <h2>จองล็อตแรก</h2>
+    <p>ล็อตนี้มี 100 เล่ม เมื่อยอดจองครบจะปิดรับก่อนวันที่ 15 พฤศจิกายน และรายชื่อในลำดับถัดไปจะได้รับแจ้งเมื่อพิมพ์รอบสอง</p>
+
+    <!-- TODO: เมื่อได้ลิงก์ฝัง Google Form — แทนที่ FORM_ID (2 จุด) แล้วย้าย class "pending" จาก .formbox ไปไว้ที่ .soon -->
+    <div class="soon">
+      แบบฟอร์มจองกำลังเปิดในอีกไม่นาน ระหว่างนี้ติดต่อได้ที่ <a href="mailto:kimwannachar@gmail.com">kimwannachar@gmail.com</a>
+    </div>
+    <div class="formbox pending">
+      <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" title="แบบฟอร์มจอง Morning & Night" loading="lazy">กำลังโหลด…</iframe>
+      <div class="form-fallback">
+        <small>ถ้าแบบฟอร์มไม่แสดง <a href="https://docs.google.com/forms/d/e/FORM_ID/viewform" target="_blank" rel="noopener">เปิดแบบฟอร์มในหน้าใหม่</a></small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHIPPING ===================== -->
+<!-- หมายเหตุ: ตารางนี้รอโรงพิมพ์ยืนยันวันส่งก่อนแก้ (ตามใบส่งงาน 9 พ.ย.) -->
+<section id="ship">
+  <div class="wrap">
+    <div class="eyebrow">การจัดส่ง</div>
+    <h2>ของถึงมือเมื่อไหร่</h2>
+    <table>
+      <tr><th>ช่วงเวลา</th><th>สิ่งที่เกิดขึ้น</th></tr>
+      <tr><td>ตอนนี้ – 15 พ.ย.</td><td>รับจอง ระหว่างนี้โรงพิมพ์ผลิตเล่มจริง</td></tr>
+      <tr><td>ปลาย พ.ย.</td><td>เล่มถึงมือผู้จัดทำ ตรวจทุกเล่มก่อนแพ็ก</td></tr>
+      <tr><td>ต้น ธ.ค.</td><td>ส่งออกตามลำดับการโอน พร้อมเลขพัสดุทาง LINE</td></tr>
+    </table>
+    <p style="margin-top:18px">ส่งด้วย Flash Express หรือไปรษณีย์ไทยแบบลงทะเบียน ในกล่องกันกระแทก 1 เล่มต่อกล่อง ในกรุงเทพฯ ปกติถึงใน 1–2 วันหลังส่งออก ต่างจังหวัด 2–4 วัน</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">คำถามที่พบบ่อย</div>
+    <h2>ก่อนตัดสินใจ</h2>
+
+    <details>
+      <summary>ถ้าเริ่มเขียนกลางปี จะใช้ได้ครบปีไหม</summary>
+      <p>ได้ เล่มนี้ไม่มีวันที่พิมพ์ไว้ 52 สัปดาห์นับจากวันที่คุณเริ่ม ไม่ใช่จากวันที่ 1 มกราคม</p>
+    </details>
+    <details>
+      <summary>ถ้าโอนแล้วแต่ยังไม่ได้ส่งสลิป</summary>
+      <p>การจองยังไม่ถูกนับจนกว่าจะได้รับสลิป เพราะยอดโอนถูกจับคู่กับชื่อในแบบฟอร์มด้วยมือทีละรายการ สลิปที่ส่งช้าไปสองสามวันยังใช้ได้ตามปกติ</p>
+    </details>
+    <details>
+      <summary>ขอยกเลิกหรือเปลี่ยนใจได้ไหม</summary>
+      <p>ก่อนวันที่ 15 พฤศจิกายน คืนเงินเต็มจำนวนทาง PromptPay เดิม หลังจากนั้นเล่มถูกสั่งพิมพ์ตามยอดแล้ว จึงขอเปลี่ยนเป็นการโอนสิทธิ์ให้คนอื่นแทน</p>
+    </details>
+    <details>
+      <summary>สั่งหลายเล่มเป็นของขวัญ หรือสั่งให้ทีม</summary>
+      <p>ตั้งแต่ 10 เล่มขึ้นไป มีราคาพิเศษ ปั๊มโลโก้องค์กรบนปกได้ และออกใบเสร็จได้ ทักมาคุยทาง LINE ได้เลย</p>
+    </details>
+    <details>
+      <summary>มีสีอื่นไหม</summary>
+      <p>ล็อตแรกมีเฉพาะสีกรมท่า สีที่สองอยู่ระหว่างพิจารณาสำหรับรอบถัดไป</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="mark">☼ ☾</div>
+    <!-- TODO: เมื่อได้ LINE OA — แทนที่ LINE_ID (2 จุด) ลบ class "pending" ออกจากสองบรรทัดถัดไป แล้วใส่ "pending" ให้บรรทัดอีเมลแทน -->
+    <p class="pending" style="margin-bottom:22px">มีคำถามก่อนจอง หรือส่งสลิป ทั้งหมดอยู่ที่ LINE เดียว</p>
+    <a class="line-btn pending" href="https://line.me/R/ti/p/@LINE_ID">LINE: @LINE_ID</a>
+    <p style="margin-bottom:22px">มีคำถามก่อนจอง ติดต่อได้ที่ <a href="mailto:kimwannachar@gmail.com">kimwannachar@gmail.com</a></p>
+    <p style="margin-top:34px;font-size:.85rem;opacity:.7">Morning &amp; Night · จัดทำโดย <a href="https://www.wannachar.com/">Kim Wannachar</a> · 2569</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <span>550 บาท · รับจองถึง 15 พ.ย.</span>
+  <a class="btn" href="#order">จอง</a>
+</div>
+
+</body>
+</html>
