@@ -78,10 +78,12 @@ section:last-of-type{border-bottom:0}
 @media (max-width:480px){.btn-ghost{margin-left:0;margin-top:12px}}
 
 /* ===== cover ===== */
-.cover-img{display:block;width:200px;margin:0 0 36px;position:relative}
+.covers{display:flex;gap:22px;align-items:flex-end;margin:0 0 36px}
+.cover-img{display:block;width:170px;position:relative}
 /* สายรัดยางยืด — วาดทับรูปปก */
 .cover-img::after{content:'';position:absolute;top:-4px;bottom:-4px;right:11%;width:9px;background:linear-gradient(90deg,#0d1322,#1a2440 45%,#0d1322);border-radius:2px;box-shadow:-2px 0 4px rgba(0,0,0,.35),2px 0 3px rgba(0,0,0,.2)}
 .cover-img img{width:100%;height:auto;display:block;border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(34,48,78,.22)}
+@media (max-width:420px){.covers{gap:14px}.cover-img{width:46%}}
 
 /* ===== two lines demo ===== */
 .demo{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px 26px 18px;margin:22px 0 8px}
@@ -169,10 +171,16 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
 <!-- ===================== HERO ===================== -->
 <header class="hero">
   <div class="wrap">
-    <picture class="cover-img">
-      <source srcset="/journal/cover-front.webp" type="image/webp">
-      <img src="/journal/cover-front.png" alt="ปก Morning &amp; Night — หนัง PU สีกรมท่า สกรีนชื่อเล่มสีขาว" width="1200" height="1739">
-    </picture>
+    <div class="covers" aria-label="ปกหลังและปกหน้า Morning &amp; Night">
+      <picture class="cover-img">
+        <source srcset="/journal/cover-back.webp" type="image/webp">
+        <img src="/journal/cover-back.png" alt="ปกหลัง — สกรีน ☼ ☾ สีขาว" width="1200" height="1739">
+      </picture>
+      <picture class="cover-img">
+        <source srcset="/journal/cover-front.webp" type="image/webp">
+        <img src="/journal/cover-front.png" alt="ปกหน้า — สกรีนชื่อเล่มสีขาวบนหนัง PU กรมท่า" width="1200" height="1739">
+      </picture>
+    </div>
 
     <div class="eyebrow">เปิดจองล็อตแรก · 100 เล่ม</div>
     <h1>Morning &amp; Night</h1>
