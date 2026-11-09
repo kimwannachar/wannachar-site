@@ -73,12 +73,9 @@ section:last-of-type{border-bottom:0}
 .btn-ghost{display:inline-block;color:var(--cream);border:1px solid rgba(247,243,234,.4);padding:13px 22px;border-radius:4px;text-decoration:none;margin-left:12px;font-size:1rem}
 @media (max-width:480px){.btn-ghost{margin-left:0;margin-top:12px}}
 
-/* ===== cover mock — ปกจริงเป็นสกรีนสีขาวบน PU กรมท่า (ไม่ใช่สีทอง) ===== */
-.cover{width:170px;height:240px;background:linear-gradient(160deg,#243152,#1a2440);border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(0,0,0,.35);margin:0 0 34px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;border-left:6px solid #16203a}
-.cover .mark{font-size:1.5rem;color:var(--cream);letter-spacing:.35em}
-.cover .name{font-family:var(--font-head);font-size:.55rem;letter-spacing:.18em;color:var(--cream);margin-top:10px;text-transform:uppercase;padding:0 14px 0 8px;text-align:center}
-.cover .strap{position:absolute;right:16px;top:0;bottom:0;width:8px;background:#11192c;border-radius:2px}
-.cover-note{font-size:.85rem;opacity:.7;margin-top:-22px;margin-bottom:30px}
+/* ===== cover ===== */
+.cover-img{display:block;width:200px;margin:0 0 36px}
+.cover-img img{width:100%;height:auto;display:block;border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
 
 /* ===== two lines demo ===== */
 .demo{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px 26px 18px;margin:22px 0 8px}
@@ -166,13 +163,10 @@ footer a{color:var(--cream);text-decoration-color:var(--gold)}
 <!-- ===================== HERO ===================== -->
 <header class="hero">
   <div class="wrap">
-    <!-- TODO: แทนที่ด้วยรูปเล่มจริงจากโรงพิมพ์ แล้วลบ .cover-note -->
-    <div class="cover" aria-hidden="true">
-      <div class="mark">☼ ☾</div>
-      <div class="name">Morning &amp; Night</div>
-      <div class="strap"></div>
-    </div>
-    <p class="cover-note">ภาพจำลอง — รูปเล่มจริงจะมาแทนที่เมื่อได้ตัวอย่างจากโรงพิมพ์</p>
+    <picture class="cover-img">
+      <source srcset="/journal/cover-front.webp" type="image/webp">
+      <img src="/journal/cover-front.png" alt="ปก Morning &amp; Night — หนัง PU สีกรมท่า สกรีนชื่อเล่มสีขาว" width="1200" height="1739">
+    </picture>
 
     <div class="eyebrow">เปิดจองล็อตแรก · 100 เล่ม</div>
     <h1>Morning &amp; Night</h1>
@@ -238,6 +232,14 @@ footer a{color:var(--cream);text-decoration-color:var(--gold)}
 
     <h3 style="margin-top:36px">นอกจาก 52 สัปดาห์ ยังมี</h3>
     <p>หน้า “ฉันในวันก่อนเริ่มต้น” ก่อนสัปดาห์แรก · หน้า “มองย้อน” และ “หนึ่งเดือนผ่านไป” ทุกสิ้นเดือน · หน้าเช็กอินทุกไตรมาส · หน้า “คำถามที่ใกล้ความคิดคุณ” สำหรับวันที่คำไม่มา · “หนึ่งปีใน 52 คำ” · “สิ่งที่วางได้และเก็บไว้” · “ฉันในวันครบหนึ่งปี” · และจดหมายถึงตัวเองในปีหน้า ที่หน้าสุดท้าย</p>
+
+    <figure class="pages" style="margin-top:8px">
+      <picture>
+        <source srcset="/journal/cover-back-front.webp" type="image/webp">
+        <img src="/journal/cover-back-front.png" alt="ปกหลังและปกหน้า Morning &amp; Night — ปกหลังสกรีน ☼ ☾ ปกหน้าสกรีนชื่อเล่ม สีขาวบนหนัง PU กรมท่า" width="2600" height="1859" loading="lazy" style="border:0;box-shadow:none;background:transparent">
+      </picture>
+      <figcaption>ปกหลัง · ปกหน้า — สกรีนสีขาว 2 จุด บนหนัง PU สีกรมท่า</figcaption>
+    </figure>
 
     <div class="specs">
       <div><b>ขนาด</b><span>14.5 × 21 ซม. · 160 หน้า</span></div>
