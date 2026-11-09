@@ -15,79 +15,83 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<!-- ฟอนต์: Trirong ใช้กับหัวเรื่อง, Sarabun ใช้กับเนื้อความ — ฟอนต์เดียวกับในเล่ม (ตั้งใจให้หน้านี้ตามเล่ม ไม่ตามเว็บหลักที่ใช้ Anuphan) -->
+<!-- ฟอนต์และสีพื้นตามเว็บหลัก (Trirong + Anuphan, พื้นชมพูขาวนวล) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Trirong:wght@400;500;600&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,500;1,300&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ===== ตัวแปรที่แก้ได้ ===== */
 :root{
-  --navy:#1F2A44;
-  --navy-soft:#3A4763;
-  --gold:#B8955A;
-  --cream:#F7F3EA;
-  --cream-deep:#EFE9DC;
-  --line:#D9DEE7;
-  --ink:#2A2F3A;
-  --muted:#6B7280;
+  --navy:#22304E;
+  --navy-soft:#5D6A85;
+  --navy-deep:#16213A;
+  --gold:#B8955A;        /* เครื่องหมาย ☼ ☾ ของเล่ม */
+  --pink:#F4D6E0;
+  --pink-soft:#FAEBF0;
+  --pink-deep:#DFA8BC;
+  --cream:#FDF9FA;       /* paper ของเว็บหลัก */
+  --cream-deep:#FAEBF0;
+  --line:#EDDFE4;
+  --ink:#22304E;
+  --muted:#5D6A85;
   --white:#FFFFFF;
   --font-head:'Trirong', 'Sarabun', serif;
-  --font-body:'Sarabun', -apple-system, 'Noto Sans Thai', sans-serif;
+  --font-body:'Anuphan', 'Sarabun', -apple-system, 'Noto Sans Thai', sans-serif;
   --max:720px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-body);font-weight:300;font-size:17px;line-height:1.85}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-body);font-weight:300;font-size:17px;line-height:1.8}
 h1,h2,h3{font-family:var(--font-head);font-weight:500;color:var(--navy);line-height:1.35;margin:0 0 .5em}
 h1{font-size:2.4rem}
 h2{font-size:1.55rem;margin-top:0}
 h3{font-size:1.15rem}
 p{margin:0 0 1em}
-a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
+a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--pink-deep)}
 small,.muted{color:var(--muted)}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 section{padding:56px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:0}
-.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--navy-soft);font-weight:600;margin-bottom:10px}
 
 /* ===== site nav (เชื่อมกับเว็บหลัก) ===== */
-.sitenav{background:var(--navy);color:var(--cream);font-size:.9rem}
-.sitenav .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;border-bottom:1px solid rgba(247,243,234,.12)}
-.sitenav a{color:var(--cream);text-decoration:none}
-.sitenav .logo{font-family:var(--font-head);letter-spacing:.06em;font-size:1rem}
-.sitenav .logo span{color:var(--gold)}
-.sitenav .back{opacity:.8}
-.sitenav .back:hover{opacity:1}
+.sitenav{position:sticky;top:0;z-index:10;background:rgba(253,249,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);font-size:.92rem}
+.sitenav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.sitenav a{color:var(--navy);text-decoration:none}
+.sitenav .logo{font-family:var(--font-head);letter-spacing:.06em;font-size:1.12rem;font-weight:500}
+.sitenav .logo span{color:var(--pink-deep)}
+.sitenav .back{color:var(--navy-soft)}
+.sitenav .back:hover{color:var(--navy-deep)}
 
 /* ===== hero ===== */
-.hero{background:var(--navy);color:var(--cream);padding:64px 0 64px;border-bottom:0}
-.hero .eyebrow{color:var(--gold)}
-.hero h1{color:var(--cream);font-size:clamp(2rem,6vw,3rem)}
-.hero .tag{font-family:var(--font-head);font-size:1.25rem;color:var(--cream);opacity:.92;margin-bottom:28px}
-.price-row{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-end;margin:26px 0 30px;padding-top:22px;border-top:1px solid rgba(247,243,234,.18)}
-.price-row .big{font-family:var(--font-head);font-size:2.2rem;color:var(--cream);line-height:1}
-.price-row .lbl{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.price-row .sub{font-size:.95rem;opacity:.8}
-.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:500;padding:14px 26px;border-radius:4px;text-decoration:none;font-size:1rem;letter-spacing:.02em}
-.btn:hover{filter:brightness(1.06)}
-.btn-ghost{display:inline-block;color:var(--cream);border:1px solid rgba(247,243,234,.4);padding:13px 22px;border-radius:4px;text-decoration:none;margin-left:12px;font-size:1rem}
+.hero{background:var(--pink-soft);color:var(--navy);padding:72px 0 64px;border-bottom:1px solid var(--line)}
+.hero h1{color:var(--navy-deep);font-size:clamp(2rem,6vw,3rem);font-weight:400}
+.hero .tag{font-family:var(--font-head);font-style:italic;font-weight:300;font-size:1.25rem;color:var(--navy-deep);margin-bottom:28px}
+.price-row{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-end;margin:26px 0 30px;padding-top:22px;border-top:1px solid var(--pink-deep)}
+.price-row .big{font-family:var(--font-head);font-size:2.2rem;color:var(--navy-deep);line-height:1}
+.price-row .lbl{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-soft);margin-bottom:6px;font-weight:600}
+.price-row .sub{font-size:.95rem;color:var(--navy-soft)}
+.btn{display:inline-block;background:var(--navy);color:#fff;font-weight:500;padding:14px 30px;border-radius:0;text-decoration:none;font-size:.9rem;letter-spacing:.08em}
+.btn:hover{background:var(--navy-deep)}
+.btn-ghost{display:inline-block;color:var(--navy);border:1px solid var(--pink-deep);padding:13px 24px;border-radius:0;text-decoration:none;margin-left:12px;font-size:.9rem;letter-spacing:.08em}
+.btn-ghost:hover{background:#fff}
 @media (max-width:480px){.btn-ghost{margin-left:0;margin-top:12px}}
 
 /* ===== cover ===== */
 .cover-img{display:block;width:200px;margin:0 0 36px}
-.cover-img img{width:100%;height:auto;display:block;border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.cover-img img{width:100%;height:auto;display:block;border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(34,48,78,.22)}
 
 /* ===== two lines demo ===== */
 .demo{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px 26px 18px;margin:22px 0 8px}
-.demo .day{font-size:.8rem;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.demo .day{font-size:.8rem;letter-spacing:.14em;color:var(--navy-soft);text-transform:uppercase;margin-bottom:12px;font-weight:600}
 .demo .q{font-family:var(--font-head);color:var(--navy);font-size:1.05rem;margin-bottom:2px}
 .demo .q small{display:block;font-family:var(--font-body);font-size:.8rem;color:var(--muted)}
-.demo .ln{border-bottom:1px dashed #C9D0DC;height:32px;margin-bottom:18px}
+.demo .ln{border-bottom:1px dashed var(--pink-deep);height:32px;margin-bottom:18px}
 
 /* ===== page previews (จากไฟล์พิมพ์จริง) ===== */
 .pages{margin-top:36px}
 .pages figure{margin:0 0 28px}
-.pages img{width:100%;height:auto;display:block;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 30px rgba(31,42,68,.08)}
+.pages img{width:100%;height:auto;display:block;border:1px solid var(--line);background:var(--white);box-shadow:0 10px 30px rgba(34,48,78,.07)}
 .pages figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
 .pages-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
 @media (max-width:560px){.pages-grid{grid-template-columns:1fr}}
@@ -102,7 +106,7 @@ section:last-of-type{border-bottom:0}
 /* ===== steps ===== */
 .steps{counter-reset:s;list-style:none;padding:0;margin:26px 0 0}
 .steps li{position:relative;padding-left:58px;margin-bottom:30px}
-.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--cream);font-family:var(--font-head);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-head);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
 .steps h3{margin-bottom:6px}
 .steps p{margin-bottom:.4em}
 
@@ -112,7 +116,7 @@ section:last-of-type{border-bottom:0}
 .qr{width:200px;height:200px;background:var(--cream-deep);border:1px dashed #C9D0DC;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:var(--muted);padding:12px}
 .qr img{width:100%;height:100%;object-fit:contain}
 .pay dl{margin:0}
-.pay dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+.pay dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy-soft);margin-top:10px;font-weight:600}
 .pay dd{margin:0 0 6px;font-weight:400;color:var(--navy)}
 .pay dd.total{font-family:var(--font-head);font-size:1.5rem}
 @media (max-width:560px){.pay{grid-template-columns:1fr}.qr{margin:0 auto}}
@@ -133,16 +137,16 @@ td.r,th.r{text-align:right;white-space:nowrap}
 details{border-top:1px solid var(--line);padding:14px 0}
 details:last-of-type{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:14px}
-summary::after{content:'+';color:var(--gold);font-family:var(--font-head);font-size:1.3rem;line-height:1}
+summary::after{content:'+';color:var(--pink-deep);font-family:var(--font-head);font-size:1.3rem;line-height:1}
 details[open] summary::after{content:'–'}
 details p{margin:10px 0 0;font-size:.98rem}
 
 /* ===== footer ===== */
-footer{background:var(--navy);color:var(--cream);padding:48px 0;font-size:.92rem}
-footer .mark{color:var(--gold);letter-spacing:.4em;font-size:1.3rem;margin-bottom:12px}
-footer a{color:var(--cream);text-decoration-color:var(--gold)}
+footer{background:var(--navy-deep);color:#EFE6EA;padding:48px 0;font-size:.92rem;border-top:1px solid var(--line)}
+footer .mark{color:var(--pink);letter-spacing:.4em;font-size:1.3rem;margin-bottom:12px}
+footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
 .line-btn{display:inline-block;background:#06C755;color:#fff;padding:12px 22px;border-radius:4px;text-decoration:none;font-weight:500}
-.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy);color:var(--cream);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.18);z-index:9;font-size:.95rem}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy-deep);color:#EFE6EA;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.18);z-index:9;font-size:.95rem}
 .sticky .btn{padding:10px 18px;font-size:.92rem}
 @media (min-width:900px){.sticky{display:none}}
 @media (max-width:899px){body{padding-bottom:64px}}
@@ -156,7 +160,7 @@ footer a{color:var(--cream);text-decoration-color:var(--gold)}
 <div class="sitenav">
   <div class="wrap">
     <a class="logo" href="/">Kim <span>Wannachar</span></a>
-    <a class="back" href="/">← หน้าแรก</a>
+    <a class="back" href="/">← Home</a>
   </div>
 </div>
 
