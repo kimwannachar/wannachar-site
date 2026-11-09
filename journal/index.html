@@ -78,7 +78,9 @@ section:last-of-type{border-bottom:0}
 @media (max-width:480px){.btn-ghost{margin-left:0;margin-top:12px}}
 
 /* ===== cover ===== */
-.cover-img{display:block;width:200px;margin:0 0 36px}
+.cover-img{display:block;width:200px;margin:0 0 36px;position:relative}
+/* สายรัดยางยืด — วาดทับรูปปก */
+.cover-img::after{content:'';position:absolute;top:-4px;bottom:-4px;right:11%;width:9px;background:linear-gradient(90deg,#0d1322,#1a2440 45%,#0d1322);border-radius:2px;box-shadow:-2px 0 4px rgba(0,0,0,.35),2px 0 3px rgba(0,0,0,.2)}
 .cover-img img{width:100%;height:auto;display:block;border-radius:6px 12px 12px 6px;box-shadow:0 18px 40px rgba(34,48,78,.22)}
 
 /* ===== two lines demo ===== */
