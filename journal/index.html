@@ -115,15 +115,6 @@ section:last-of-type{border-bottom:0}
 .steps p{margin-bottom:.4em}
 
 /* ===== pay ===== */
-.pay{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:start;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px}
-.pay.no-qr{grid-template-columns:1fr}
-.qr{width:200px;height:200px;background:var(--cream-deep);border:1px dashed #C9D0DC;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:var(--muted);padding:12px}
-.qr img{width:100%;height:100%;object-fit:contain}
-.pay dl{margin:0}
-.pay dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy-soft);margin-top:10px;font-weight:600}
-.pay dd{margin:0 0 6px;font-weight:400;color:var(--navy)}
-.pay dd.total{font-family:var(--font-head);font-size:1.5rem}
-@media (max-width:560px){.pay{grid-template-columns:1fr}.qr{margin:0 auto}}
 
 /* ===== form ===== */
 .formbox{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:8px;margin-top:22px}
@@ -149,13 +140,25 @@ details p{margin:10px 0 0;font-size:.98rem}
 footer{background:var(--navy-deep);color:#EFE6EA;padding:48px 0;font-size:.92rem;border-top:1px solid var(--line)}
 footer .mark{color:var(--pink);letter-spacing:.4em;font-size:1.3rem;margin-bottom:12px}
 footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
-.line-btn{display:inline-block;background:#06C755;color:#fff;padding:12px 22px;border-radius:4px;text-decoration:none;font-weight:500}
+.social{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 10px}
+.social a{display:inline-block;background:#fff;color:var(--navy);border:1px solid var(--pink-deep);padding:11px 22px;text-decoration:none;font-weight:500;font-size:.9rem;letter-spacing:.06em}
+.social a:hover{background:var(--pink-soft)}
+footer .social a{background:transparent;color:#EFE6EA;border-color:rgba(239,230,234,.45)}
+footer .social a:hover{background:rgba(255,255,255,.08)}
+.pricebox{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:8px 26px 22px}
+.pricebox table{margin-top:4px}
+.pricebox td:last-child,.pricebox th:last-child{text-align:right;white-space:nowrap;font-family:var(--font-head);font-size:1.15rem;color:var(--navy-deep)}
+.pricebox th:last-child{font-family:var(--font-body);font-size:.85rem}
+.pricebox .note{font-size:.95rem;margin:16px 0 0}
+.pricebox .totals{font-family:var(--font-head);color:var(--navy-deep);font-size:1.05rem;margin:14px 0 0}
+.pay-cta{margin-top:26px}
+.pay-cta small{display:block;margin-top:10px}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:var(--navy-deep);color:#EFE6EA;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.18);z-index:9;font-size:.95rem}
 .sticky .btn{padding:10px 18px;font-size:.92rem}
 @media (min-width:900px){.sticky{display:none}}
 @media (max-width:899px){body{padding-bottom:64px}}
 
-/* ส่วนที่ยังไม่มีค่าจริง (QR / ฟอร์ม / LINE) — เอา class นี้ออกเมื่อใส่ค่าแล้ว */
+/* ส่วนที่ยังไม่มีค่าจริง (ฟอร์ม) — เอา class นี้ออกเมื่อใส่ค่าแล้ว */
 .pending{display:none!important}
 </style>
 </head>
@@ -190,6 +193,7 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
       <div>
         <div class="lbl">ราคา</div>
         <div class="big">550 <span style="font-size:1rem">บาท</span></div>
+        <div class="sub" style="margin-top:6px">2 เล่ม 1,050 · 3 เล่มขึ้นไป เล่มละ 500</div>
       </div>
       <div>
         <div class="lbl">รับจองถึง</div>
@@ -248,11 +252,17 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
     <p>หน้า “ฉันในวันก่อนเริ่มต้น” ก่อนสัปดาห์แรก · หน้า “มองย้อน” และ “หนึ่งเดือนผ่านไป” ทุกสิ้นเดือน · หน้าเช็กอินทุกไตรมาส · หน้า “คำถามที่ใกล้ความคิดคุณ” สำหรับวันที่คำไม่มา · “หนึ่งปีใน 52 คำ” · “สิ่งที่วางได้และเก็บไว้” · “ฉันในวันครบหนึ่งปี” · และจดหมายถึงตัวเองในปีหน้า ที่หน้าสุดท้าย</p>
 
     <figure class="pages" style="margin-top:8px">
-      <picture>
-        <source srcset="/journal/cover-back-front.webp" type="image/webp">
-        <img src="/journal/cover-back-front.png" alt="ปกหลังและปกหน้า Morning &amp; Night — ปกหลังสกรีน ☼ ☾ ปกหน้าสกรีนชื่อเล่ม สีขาวบนหนัง PU กรมท่า" width="2600" height="1859" loading="lazy" style="border:0;box-shadow:none;background:transparent">
-      </picture>
-      <figcaption>ปกหลัง · ปกหน้า — สกรีนสีขาว 2 จุด บนหนัง PU สีกรมท่า</figcaption>
+      <div class="covers" style="margin:0;justify-content:center;gap:28px">
+        <picture class="cover-img" style="width:34%">
+          <source srcset="/journal/cover-front.webp" type="image/webp">
+          <img src="/journal/cover-front.png" alt="ปกหน้า — สกรีนชื่อเล่มสีขาว" width="1200" height="1739" loading="lazy" style="border:0">
+        </picture>
+        <picture class="cover-img" style="width:34%">
+          <source srcset="/journal/cover-back.webp" type="image/webp">
+          <img src="/journal/cover-back.png" alt="ปกหลัง — สกรีน ☼ ☾ สีขาว" width="1200" height="1739" loading="lazy" style="border:0">
+        </picture>
+      </div>
+      <figcaption style="text-align:center">ปกหน้า · ปกหลัง — สกรีนสีขาว 2 จุด บนหนัง PU สีกรมท่า</figcaption>
     </figure>
 
     <div class="specs">
@@ -278,11 +288,11 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
       </li>
       <li>
         <h3>โอนเงินผ่าน PromptPay</h3>
-        <p>ยอดคือ 550 บาทต่อเล่ม บวกค่าส่ง 50 บาทต่อออร์เดอร์ (รับเองไม่มีค่าส่ง) <span class="pending">QR อยู่ในหัวข้อถัดไป</span></p>
+        <p>QR พร้อมเพย์อยู่ในแบบฟอร์มจอง ยอดเป็นไปตามตารางราคาด้านล่าง บวกค่าส่ง 50 บาทต่อออร์เดอร์ (รับเองไม่มีค่าส่ง)</p>
       </li>
       <li>
-        <h3>ส่งสลิปทาง LINE</h3>
-        <p>สลิปพร้อมชื่อที่กรอกไว้ ส่งมาที่ LINE ของ Morning &amp; Night การจองจะยืนยันภายใน 24 ชั่วโมง และเมื่อของส่งออก จะมีเลขพัสดุส่งกลับไปทางเดียวกัน</p>
+        <h3>แนบสลิป</h3>
+        <p>แนบสลิปได้ในแบบฟอร์ม หรือส่งมาทางแชทของเพจ <a href="https://www.facebook.com/profile.php?id=61596290374908" target="_blank" rel="noopener">Facebook</a> / <a href="https://www.instagram.com/journalmorningnight/" target="_blank" rel="noopener">Instagram</a> การจองจะยืนยันภายใน 24 ชั่วโมง และเมื่อของส่งออก จะมีเลขพัสดุส่งกลับไปทางเดียวกัน</p>
       </li>
     </ol>
   </div>
@@ -291,24 +301,21 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
 <!-- ===================== PAYMENT ===================== -->
 <section id="pay">
   <div class="wrap">
-    <div class="eyebrow">การชำระเงิน</div>
-    <h2>PromptPay</h2>
-    <!-- TODO: เมื่อได้ QR แล้ว — ลบ class "no-qr" และ "pending" ในบล็อกนี้ แล้วใส่ <img src="/journal/promptpay.png" alt="QR PromptPay"> ใน .qr -->
-    <div class="pay no-qr">
-      <div class="qr pending">
-        ตำแหน่ง QR PromptPay<br>(รูปจากแอปธนาคาร หรือ QR ที่สร้างไว้)
-      </div>
-      <dl>
-        <dt class="pending">ชื่อบัญชี</dt>
-        <dd class="pending">TODO: ชื่อ–นามสกุล ตามที่ปรากฏตอนสแกน</dd>
-        <dt>ราคาต่อเล่ม</dt>
-        <dd>550 บาท</dd>
-        <dt>ค่าส่ง</dt>
-        <dd>50 บาทต่อออร์เดอร์ (Flash / ไปรษณีย์) · รับเองที่นัดหมาย ไม่มีค่าส่ง</dd>
-        <dt>ยอดที่พบบ่อย</dt>
-        <dd class="total">1 เล่ม = 600 บาท · 2 เล่ม = 1,150 บาท</dd>
-        <dd class="muted" style="font-size:.9rem">ยอดตรงตามอีเมลยืนยันที่ได้รับหลังกรอกแบบฟอร์ม</dd>
-      </dl>
+    <div class="eyebrow">ราคาและการชำระเงิน</div>
+    <h2>ราคาตามจำนวน</h2>
+    <div class="pricebox">
+      <table>
+        <tr><th>จำนวน</th><th>เท่ากับเล่มละ</th><th>ราคาหนังสือ</th></tr>
+        <tr><td>1 เล่ม</td><td>550</td><td>550 บาท</td></tr>
+        <tr><td>2 เล่ม</td><td>525</td><td>1,050 บาท</td></tr>
+        <tr><td>3 เล่มขึ้นไป</td><td>500</td><td>เล่มละ 500 บาท</td></tr>
+      </table>
+      <p class="note">ค่าส่ง 50 บาทต่อออร์เดอร์ (Flash / ไปรษณีย์) · รับเองที่นัดหมาย ไม่มีค่าส่ง</p>
+      <p class="totals">ส่งถึงบ้าน: 1 เล่ม 600 · 2 เล่ม 1,100 · 3 เล่ม 1,550 บาท</p>
+    </div>
+    <div class="pay-cta">
+      <a class="btn" href="#order">ไปที่แบบฟอร์มจอง</a>
+      <small class="muted">QR พร้อมเพย์และยอดที่ต้องโอน อยู่ในแบบฟอร์มจอง</small>
     </div>
   </div>
 </section>
@@ -322,7 +329,7 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
 
     <!-- TODO: เมื่อได้ลิงก์ฝัง Google Form — แทนที่ FORM_ID (2 จุด) แล้วย้าย class "pending" จาก .formbox ไปไว้ที่ .soon -->
     <div class="soon">
-      แบบฟอร์มจองกำลังเปิดในอีกไม่นาน ระหว่างนี้ติดต่อได้ที่ <a href="mailto:kimwannachar@gmail.com">kimwannachar@gmail.com</a>
+      แบบฟอร์มจองกำลังเปิดในอีกไม่นาน ระหว่างนี้จองหรือสอบถามได้ทางแชทของเพจ <a href="https://www.facebook.com/profile.php?id=61596290374908" target="_blank" rel="noopener">Facebook</a> หรือ <a href="https://www.instagram.com/journalmorningnight/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="formbox pending">
       <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" title="แบบฟอร์มจอง Morning & Night" loading="lazy">กำลังโหลด…</iframe>
@@ -343,7 +350,7 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
       <tr><th>ช่วงเวลา</th><th>สิ่งที่เกิดขึ้น</th></tr>
       <tr><td>ตอนนี้ – 15 พ.ย.</td><td>รับจอง ระหว่างนี้โรงพิมพ์ผลิตเล่มจริง</td></tr>
       <tr><td>ปลาย พ.ย.</td><td>เล่มถึงมือผู้จัดทำ ตรวจทุกเล่มก่อนแพ็ก</td></tr>
-      <tr><td>ต้น ธ.ค.</td><td>ส่งออกตามลำดับการโอน พร้อมเลขพัสดุทาง LINE</td></tr>
+      <tr><td>ต้น ธ.ค.</td><td>ส่งออกตามลำดับการโอน พร้อมเลขพัสดุส่งกลับทางแชทที่ติดต่อไว้</td></tr>
     </table>
     <p style="margin-top:18px">ส่งด้วย Flash Express หรือไปรษณีย์ไทยแบบลงทะเบียน ในกล่องกันกระแทก 1 เล่มต่อกล่อง ในกรุงเทพฯ ปกติถึงใน 1–2 วันหลังส่งออก ต่างจังหวัด 2–4 วัน</p>
   </div>
@@ -369,7 +376,7 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
     </details>
     <details>
       <summary>สั่งหลายเล่มเป็นของขวัญ หรือสั่งให้ทีม</summary>
-      <p>ตั้งแต่ 10 เล่มขึ้นไป มีราคาพิเศษ ปั๊มโลโก้องค์กรบนปกได้ และออกใบเสร็จได้ ทักมาคุยทาง LINE ได้เลย</p>
+      <p>ตั้งแต่ 3 เล่มขึ้นไป เล่มละ 500 บาท สำหรับจำนวนมากให้ทีม ปั๊มโลโก้องค์กรบนปกได้ และออกใบเสร็จได้ รายละเอียดคุยได้ทางแชทของเพจ <a href="https://www.facebook.com/profile.php?id=61596290374908" target="_blank" rel="noopener">Facebook</a></p>
     </details>
     <details>
       <summary>มีสีอื่นไหม</summary>
@@ -382,16 +389,17 @@ footer a{color:#EFE6EA;text-decoration-color:var(--pink)}
 <footer>
   <div class="wrap">
     <div class="mark">☼ ☾</div>
-    <!-- TODO: เมื่อได้ LINE OA — แทนที่ LINE_ID (2 จุด) ลบ class "pending" ออกจากสองบรรทัดถัดไป แล้วใส่ "pending" ให้บรรทัดอีเมลแทน -->
-    <p class="pending" style="margin-bottom:22px">มีคำถามก่อนจอง หรือส่งสลิป ทั้งหมดอยู่ที่ LINE เดียว</p>
-    <a class="line-btn pending" href="https://line.me/R/ti/p/@LINE_ID">LINE: @LINE_ID</a>
-    <p style="margin-bottom:22px">มีคำถามก่อนจอง ติดต่อได้ที่ <a href="mailto:kimwannachar@gmail.com">kimwannachar@gmail.com</a></p>
+    <p style="margin-bottom:14px">มีคำถามก่อนจอง หรือส่งสลิป ทักได้ที่แชทของเพจ</p>
+    <div class="social">
+      <a href="https://www.facebook.com/profile.php?id=61596290374908" target="_blank" rel="noopener">Facebook · Morning &amp; Night Journal</a>
+      <a href="https://www.instagram.com/journalmorningnight/" target="_blank" rel="noopener">Instagram · @journalmorningnight</a>
+    </div>
     <p style="margin-top:34px;font-size:.85rem;opacity:.7">Morning &amp; Night · จัดทำโดย <a href="https://www.wannachar.com/">Kim Wannachar</a> · 2569</p>
   </div>
 </footer>
 
 <div class="sticky">
-  <span>550 บาท · รับจองถึง 15 พ.ย.</span>
+  <span>550 บาท · 3 เล่มขึ้นไป เล่มละ 500 · ถึง 15 พ.ย.</span>
   <a class="btn" href="#order">จอง</a>
 </div>
 
