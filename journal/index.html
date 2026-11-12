@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Morning &amp; Night — สมุดบันทึกวันละสองบรรทัด | เปิดจองล็อตแรก</title>
-<meta name="description" content="Morning & Night สมุดบันทึกเช้า–ก่อนนอน วันละสองบรรทัด ใช้ได้ 1 ปี ไม่ระบุวันที่ ปกหนัง PU สีกรมท่า ขนาด 14.5 × 21 ซม. 160 หน้า เปิดจองล็อตแรก 100 เล่ม 550 บาท">
+<meta name="description" content="Morning & Night สมุดบันทึกวันละสองบรรทัด — หนึ่งบรรทัดก่อนเปิดวัน หนึ่งบรรทัดก่อนปิดวัน ใช้ได้ 1 ปี ไม่ระบุวันที่ ปกหนัง PU สีกรมท่า ขนาด 14.5 × 21 ซม. 160 หน้า เปิดจองล็อตแรก 100 เล่ม 550 บาท">
 <meta property="og:title" content="Morning & Night — สมุดบันทึกวันละสองบรรทัด">
 <meta property="og:description" content="เล่มนี้ออกแบบมาเพื่อให้คุณเห็น 'คุณ' ชัดขึ้น — เปิดจองล็อตแรก 100 เล่ม">
 <meta property="og:image" content="https://www.wannachar.com/journal/og.png">
@@ -99,6 +99,11 @@ section:last-of-type{border-bottom:0}
 .pages figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
 .pages-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
 @media (max-width:560px){.pages-grid{grid-template-columns:1fr}}
+
+.extras{list-style:none;padding:0;margin:0 0 8px}
+.extras li{padding:9px 0;border-top:1px solid var(--line);font-size:.98rem}
+.extras li:last-child{border-bottom:1px solid var(--line)}
+.extras b{font-family:var(--font-head);font-weight:500;color:var(--navy-deep)}
 
 /* ===== specs ===== */
 .specs{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:18px}
@@ -214,42 +219,52 @@ footer .social a:hover{background:rgba(255,255,255,.08)}
 <section id="inside">
   <div class="wrap">
     <div class="eyebrow">ข้างในเล่ม</div>
-    <h2>เช้าหนึ่งบรรทัด คืนหนึ่งบรรทัด</h2>
-    <p>ทั้งเล่มมีคำถามหลักอยู่สองข้อ ข้อหนึ่งสำหรับตอนเช้า อีกข้อสำหรับก่อนนอน แต่ละข้อมีที่ให้เขียนแค่บรรทัดเดียว ไม่มีหน้าไหนที่ต้องเขียนยาว และไม่มีวันที่พิมพ์ไว้ล่วงหน้า วันไหนว่างไป หน้าถัดไปก็ยังรออยู่เหมือนเดิม</p>
-    <p>หนึ่งปีของคุณในเล่มนี้คือ 52 สัปดาห์ · 7 วัน · 2 บรรทัด — รวม 728 บรรทัดที่เป็นคุณ</p>
+    <h2>หนึ่งบรรทัด ก่อนเปิดวัน · หนึ่งบรรทัด ก่อนปิดวัน</h2>
+    <p>ทั้งเล่มมีคำถามหลักอยู่สองข้อ ข้อหนึ่งก่อนเปิดวัน อีกข้อก่อนปิดวัน แต่ละข้อมีที่ให้เขียนแค่บรรทัดเดียว ไม่มีหน้าไหนที่ต้องเขียนยาว และเล่มนี้ไม่มีวันที่พิมพ์ไว้ วันเริ่มบันทึก คุณเป็นคนเลือกเอง — Any day is day one</p>
+    <p>52 สัปดาห์ · 7 วัน · 2 บรรทัด — หนึ่งปีต่อมา จะมี 728 บรรทัดที่เป็นคุณ</p>
 
     <div class="demo" aria-label="ตัวอย่างหนึ่งวันในเล่ม">
-      <div class="day">Monday · วันที่ ______</div>
+      <div class="day">Monday · Date ______</div>
       <div class="q">☼ วันนี้ฉันเลือกเป็นตัวเองแบบไหน <small>Who do I choose to be today?</small></div>
       <div class="ln"></div>
       <div class="q">☾ ก่อนนอน ฉันอยากวาง หรือเก็บอะไร <small>Before bed, what do I want to lay down — or keep?</small></div>
       <div class="ln"></div>
     </div>
-    <p class="muted" style="font-size:.9rem">หนึ่งสัปดาห์คือหนึ่งหน้าคู่ จันทร์–พฤหัสฯ อยู่ซ้าย ศุกร์–อาทิตย์อยู่ขวา และท้ายสัปดาห์มีที่ให้หนึ่งคำแทนสัปดาห์นั้น</p>
+    <p class="muted" style="font-size:.9rem">หนึ่งสัปดาห์คือหนึ่งหน้าคู่ จันทร์–พฤหัสบดีอยู่ซ้าย ศุกร์–อาทิตย์อยู่ขวา ท้ายสัปดาห์มี This week’s word — หนึ่งคำแทนสัปดาห์นี้ของฉัน</p>
 
     <div class="pages">
       <figure>
         <img src="/journal/spread-week.png" alt="หน้าคู่หนึ่งสัปดาห์ในเล่ม Morning &amp; Night — ซ้ายจันทร์ถึงพฤหัสบดี ขวาศุกร์ถึงอาทิตย์ แต่ละวันมีบรรทัด Morning และ Night" width="1258" height="910" loading="lazy">
-        <figcaption>หน้าคู่หนึ่งสัปดาห์ จากไฟล์พิมพ์จริง (เนื้อในพิมพ์ขาวดำ ตัวหนังสือสีเทาเข้ม)</figcaption>
+        <figcaption>Week 01 — หน้าคู่หนึ่งสัปดาห์ จากไฟล์พิมพ์จริง (เนื้อในพิมพ์ขาวดำ ตัวหนังสือสีเทาเข้ม)</figcaption>
       </figure>
       <div class="pages-grid">
         <figure>
           <img src="/journal/page-how-it-works.png" alt="หน้า How it works อธิบายส่วนต่าง ๆ ของเล่ม" width="628" height="910" loading="lazy">
-          <figcaption>How it works — แผนที่ของเล่มในหน้าเดียว</figcaption>
+          <figcaption>How it works — Morning · Night · Week · Stuck · Year’s end</figcaption>
         </figure>
         <figure>
           <img src="/journal/page-before-you-begin.png" alt="หน้า Before you begin — ฉันในวันก่อนเริ่มต้น" width="628" height="910" loading="lazy">
           <figcaption>Before you begin — ฉันในวันก่อนเริ่มต้น</figcaption>
         </figure>
         <figure>
-          <img src="/journal/page-monthly-reflection.png" alt="หน้า Monthly Reflection สามคำถามท้ายเดือน" width="628" height="910" loading="lazy">
-          <figcaption>Monthly Reflection — สามคำถามท้ายเดือน</figcaption>
+          <img src="/journal/page-monthly-reflection.png" alt="หน้า Monthly Reflection — เดือนนี้ของฉัน บอกอะไรบ้าง" width="628" height="910" loading="lazy">
+          <figcaption>Monthly Reflection — เดือนนี้ของฉัน บอกอะไรบ้าง</figcaption>
         </figure>
       </div>
     </div>
 
     <h3 style="margin-top:36px">นอกจาก 52 สัปดาห์ ยังมี</h3>
-    <p>หน้า “ฉันในวันก่อนเริ่มต้น” ก่อนสัปดาห์แรก · หน้า “มองย้อน” และ “หนึ่งเดือนผ่านไป” ทุกสิ้นเดือน · หน้าเช็กอินทุกไตรมาส · หน้า “คำถามที่ใกล้ความคิดคุณ” สำหรับวันที่คำไม่มา · “หนึ่งปีใน 52 คำ” · “สิ่งที่วางได้และเก็บไว้” · “ฉันในวันครบหนึ่งปี” · และจดหมายถึงตัวเองในปีหน้า ที่หน้าสุดท้าย</p>
+    <ul class="extras">
+      <li><b>Before you begin</b> — ฉันในวันก่อนเริ่มต้น</li>
+      <li><b>Looking back</b> — ย้อนอ่านบันทึกของเดือนนี้ · <b>Monthly Reflection</b> — เดือนนี้ของฉัน บอกอะไรบ้าง</li>
+      <li><b>Quarter Check-in</b> — สามเดือนของฉัน บอกอะไรบ้าง</li>
+      <li><b>คำถามที่ใกล้ความคิดคุณ</b> — When the words don’t come สำหรับวันที่เขียนไม่ออก</li>
+      <li><b>A year in 52 words</b> — หนึ่งปีของฉัน ใน 52 คำ</li>
+      <li><b>Laid down this year · Kept this year</b> — สิ่งที่วางได้และเก็บไว้</li>
+      <li><b>One year later</b> — ฉันในวันครบหนึ่งปี</li>
+      <li><b>A letter to next-year me</b> — จดหมายถึงตัวเองปีหน้า</li>
+      <li><b>The thinking behind</b> — เหตุผลและงานวิจัยที่อยู่เบื้องหลังทุกส่วนของเล่ม</li>
+    </ul>
 
     <figure class="pages" style="margin-top:8px">
       <div class="covers" style="margin:0;justify-content:center;gap:28px">
@@ -363,7 +378,7 @@ footer .social a:hover{background:rgba(255,255,255,.08)}
 
     <details>
       <summary>ถ้าเริ่มเขียนกลางปี จะใช้ได้ครบปีไหม</summary>
-      <p>ได้ เล่มนี้ไม่มีวันที่พิมพ์ไว้ 52 สัปดาห์นับจากวันที่คุณเริ่ม ไม่ใช่จากวันที่ 1 มกราคม</p>
+      <p>ได้ เล่มนี้ไม่มีวันที่พิมพ์ไว้ วันเริ่มบันทึก คุณเป็นคนเลือกเอง — 52 สัปดาห์นับจากวันที่คุณเริ่ม ไม่ใช่จากวันที่ 1 มกราคม</p>
     </details>
     <details>
       <summary>ถ้าโอนแล้วแต่ยังไม่ได้ส่งสลิป</summary>
